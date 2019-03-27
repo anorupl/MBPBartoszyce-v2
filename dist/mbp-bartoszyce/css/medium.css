@@ -1,0 +1,137 @@
+/* contrast
+========================================================================== */
+/*--------------------------------------------------------------
+-- setting/
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+>>> variables
+----------------------------------------------------------------
+|
+|-- Path
+|-- Font
+|-- Breakpoint (continer max-width 1300px)
+|
+|-- Color
+|----- Menu horizontal
+|----- Menu vertical
+|----- Menu small
+|----- Pagination
+|
+*/
+/*--------------------------------------------------------------
+>>> Path
+---------------------------------------------------------------*/
+/*--------------------------------------------------------------
+>>> Font
+---------------------------------------------------------------*/
+/*--------------------------------------------------------------
+>>> Breakpoint
+---------------------------------------------------------------*/
+/*--------------------------------------------------------------
+>>> Color
+---------------------------------------------------------------*/
+/*--------------------------------------------------------------
+>>> Menu horizontal
+---------------------------------------------------------------*/
+/* all */
+/* over */
+/*--------------------------------------------------------------
+>>> Color Menu small
+---------------------------------------------------------------*/
+/*--------------------------------------------------------------
+>>> Color Menu Pagination
+---------------------------------------------------------------*/
+body {
+  font-size: 18px;
+  font-size: 1.8rem; }
+
+h1, .class-h1, .f-size-h1 {
+  font-size: 31px;
+  font-size: 3.1rem; }
+
+h2, .class-h2, .f-size-h2 {
+  font-size: 28px;
+  font-size: 2.8rem; }
+
+h3, .class-h3, .f-size-h3 {
+  font-size: 25px;
+  font-size: 2.5rem; }
+
+h4, .class-h4, .f-size-h4 {
+  font-size: 22px;
+  font-size: 2.2rem; }
+
+h5, h6, .class-h5, .f-size-h5 {
+  font-size: 20px;
+  font-size: 2rem; }
+
+blockquote {
+  font-size: 128.57143%; }
+
+.tabs__item {
+  font-size: 22px;
+  font-size: 2.2rem; }
+
+#top-bar {
+  font-size: 17px;
+  font-size: 1.7rem; }
+
+#posts-min h2 {
+  font-size: 18px;
+  font-size: 1.8rem; }
+
+.coletion-image,
+.coletion-content,
+.coletion-gallery {
+  height: 600px; }
+
+.h-nav--desc {
+  font-size: 20px;
+  font-size: 2rem; }
+
+/*--------------------------------------------------------------
+-- Responsive breakpoint
+--------------------------------------------------------------*/
+@media (min-width: 62em) and (max-width: 80em) {
+  .two-line-h {
+    min-height: 3.9em; }
+  .eight-line {
+    min-height: 15em; }
+  .f-post-content {
+    height: 800px; }
+  #map-canvas {
+    height: 630px; } }
+
+/*--------------------------------------------------------------
+-- Responsive breakpoint
+--------------------------------------------------------------*/
+@media (min-width: 80em) {
+  .f-post-content {
+    height: 700px; }
+  .coletion-image,
+  .coletion-content,
+  .coletion-gallery {
+    height: 430px; } }
+
+/*--------------------------------------------------------------
+-- Responsive breakpoint
+--------------------------------------------------------------*/
+@media (min-width: 100em) {
+  body {
+    font-size: 20px;
+    font-size: 2rem; }
+  h1, .class-h1, .f-size-h1 {
+    font-size: 43px;
+    font-size: 4.3rem; }
+  h2, .class-h2, .f-size-h2 {
+    font-size: 36px;
+    font-size: 3.6rem; }
+  h3, .class-h3, .f-size-h3 {
+    font-size: 31px;
+    font-size: 3.1rem; }
+  h4, .class-h4, .f-size-h4 {
+    font-size: 26px;
+    font-size: 2.6rem; }
+  h5, h6, .class-h5, .f-size-h5 {
+    font-size: 23px;
+    font-size: 2.3rem; } }
