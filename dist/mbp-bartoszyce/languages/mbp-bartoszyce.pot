@@ -114,11 +114,15 @@ msgstr ""
 msgid "E-mail"
 msgstr ""
 
-#: src/components/features/section-contact.php:137, src/inc/customizer/setting_control/inc_setting_contact.php:133
+#: src/components/features/section-contact.php:145
+msgid "Show contact details for departments"
+msgstr ""
+
+#: src/components/features/section-contact.php:161, src/inc/customizer/setting_control/inc_setting_contact.php:133
 msgid "Telephone number"
 msgstr ""
 
-#: src/components/features/section-contact.php:163, src/inc/customizer/custom_control_field/inc_field_open_hours.php:91, src/inc/customizer/setting_control/inc_setting_contact.php:197
+#: src/components/features/section-contact.php:187, src/inc/customizer/custom_control_field/inc_field_open_hours.php:91, src/inc/customizer/setting_control/inc_setting_contact.php:231
 msgid "Opening Hours"
 msgstr ""
 
@@ -302,11 +306,15 @@ msgstr ""
 msgid "Show map in contact"
 msgstr ""
 
-#: src/inc/customizer/setting_control/inc_setting_contact.php:73, src/inc/customizer/setting_control/inc_setting_contact.php:103, src/inc/customizer/setting_control/inc_setting_contact.php:133, src/inc/customizer/setting_control/inc_setting_contact.php:163, src/inc/customizer/setting_control/inc_setting_contact.php:197, src/inc/customizer/setting_control/inc_setting_contact.php:229
+#: src/inc/customizer/setting_control/inc_setting_contact.php:73, src/inc/customizer/setting_control/inc_setting_contact.php:103, src/inc/customizer/setting_control/inc_setting_contact.php:133, src/inc/customizer/setting_control/inc_setting_contact.php:163, src/inc/customizer/setting_control/inc_setting_contact.php:231, src/inc/customizer/setting_control/inc_setting_contact.php:263
 msgid "Tab #"
 msgstr ""
 
-#: src/inc/customizer/setting_control/inc_setting_contact.php:229
+#: src/inc/customizer/setting_control/inc_setting_contact.php:187
+msgid "Contact page"
+msgstr ""
+
+#: src/inc/customizer/setting_control/inc_setting_contact.php:263
 msgid "Select a location on map"
 msgstr ""
 

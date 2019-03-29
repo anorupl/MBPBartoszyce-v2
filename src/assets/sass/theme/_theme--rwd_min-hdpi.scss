@@ -42,7 +42,7 @@ h5, h6,.class-h5,.f-size-h5 { @include font-size(($size-base + 0.5));}
 2.0 Universal styles
 --------------------------------------------------------------*/
 .h--xxl {
-  @include font-size(($font-size-xxl + 3));
+  @include font-size(($font-size-xxl + 2.7));
 }
 /*--------------------------------------------------------------
 4.7 Contact

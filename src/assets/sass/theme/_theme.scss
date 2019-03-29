@@ -102,8 +102,13 @@ main {
     background-color: $three-color;
   }
 }
-
-
+.btn--border {
+  display: inline-block;
+  margin: 5px 0;
+  padding: 5px;
+  border: 2px solid;
+  border-radius: 10px;
+}
 
 /* color schemes */
 .text-light {color: $white;}
@@ -123,6 +128,10 @@ main {
     color:$five-bw;
   }
 }
+.border--light {
+  border-color: $four-bw;
+}
+
 .fidkar-white {
   background-color: $white;
 }
@@ -195,12 +204,12 @@ main {
   @include font-size($font-size-m);
   padding: 5px gutter();
   border-bottom: 1px solid lighten($five-bw, 42%);
-  
+
   .contact-item {
     display: inline-block;
     margin-top: 10px;
     padding: 0 5px;
-    
+
   }
 }
 #top-bar__address {
@@ -370,7 +379,7 @@ main {
   background: center no-repeat;
   background-size: cover;
   background-color: $one-color;
-  
+
   .entry-header {
     flex: 0 1 auto;
   }
@@ -388,7 +397,7 @@ main {
 // Block w other post - small
 #posts-min {
   overflow: hidden;
-  
+
   article {
     float: left;
     position: relative;
@@ -421,7 +430,7 @@ main {
   margin: 10px auto;
   border-radius: 0.7em;
   overflow: hidden;
-  
+
   &:hover {
     background-color: $two-color
   }
@@ -525,7 +534,7 @@ main {
 .em-calendar thead {
   background-color: $two-color;
   color: $four-bw;
-  
+
   a {
     color: $four-bw;
   }
@@ -544,7 +553,7 @@ tr.days-names {
   margin-bottom: 55px;
   background-color: $two-color;
   clear: both;
-  
+
   &::after {
     content: '';
     display: block;
@@ -582,7 +591,7 @@ tr.days-names {
     padding-bottom: 10px;
     min-width: 50px;
     border-bottom: 1px solid $light-border;
-    
+
     a[aria-selected=true] {
       color: $one-color;
     }
@@ -624,7 +633,7 @@ tr.days-names {
   .tab-catl {
     overflow: hidden;
   }
-  
+
   .tabs__item {
     a {
       color: $white;
@@ -651,7 +660,7 @@ tr.days-names {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+
   img {
     width: 100%;
     flex: 0 0 auto; // fix for ie11
@@ -670,7 +679,7 @@ tr.days-names {
   .header-section {
     position: relative;
     padding-bottom: 0;
-    
+
     > div {
       z-index: 5;
       position: relative;
@@ -710,7 +719,7 @@ tr.days-names {
 /* contact tabs */
 #contact__content {
   background-color: $two-color;
-  
+
   .contact-item {
     margin-bottom: 20px;
   }
@@ -779,7 +788,7 @@ tr.days-names {
 --------------------------------------------------------------*/
 .widget {
   border-bottom: 2px solid $border-color;
-  
+
   &::after {
     content: '';
     display: block;

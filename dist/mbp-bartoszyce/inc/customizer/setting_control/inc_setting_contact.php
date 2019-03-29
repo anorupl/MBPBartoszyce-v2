@@ -84,6 +84,23 @@ for ( $i = 1; $i <= 4; $i++ ) {
 		'type'     => 'email'
 	));
 
+	if ($i == 1) {
+		$wp_customize->add_setting( "wpg_contact_page_$i",array(
+				'default'           => '',
+				'capability'        => 'edit_theme_options',
+				'sanitize_callback' => 'wpg_intval'
+				));
+		$wp_customize->add_control( "wpg_contact_page_$i", array(
+			'label' => __( 'Contact page', 'wpg_theme' ) . ' #' . $i,
+			'section' => $contact_section_id,
+			'type' => 'dropdown-pages'
+		));
+	}
+
+
+
+
+
 	// ==============================================
 	//  = Opening Hours							=
 	//  =============================================

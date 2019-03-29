@@ -787,7 +787,6 @@ code {
   background-image: url("img/svg/svg/arrow.svg");
   -webkit-background-size: 100% 100%;
      -moz-background-size: 100%;
-       -o-background-size: 100%;
           background-size: 100%;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -952,7 +951,7 @@ a:hover, a:active {
 
 */
 ul, ol {
-  margin: 0 0 0.2em 1em;
+  margin: 0 0 1.6em 1em;
 }
 
 ul {
@@ -2146,6 +2145,16 @@ main {
   background-color: #0bd69f;
 }
 
+.btn--border {
+  display: inline-block;
+  margin: 5px 0;
+  padding: 5px;
+  border: 2px solid;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+}
+
 /* color schemes */
 .text-light {
   color: #ffffff;
@@ -2185,6 +2194,10 @@ main {
 
 .gray-content a {
   color: #7e7e7e;
+}
+
+.border--light {
+  border-color: #fbfafc;
 }
 
 .fidkar-white {
@@ -2381,7 +2394,6 @@ main {
   background-image: url(img/svg/trianglify.svg);
   -webkit-background-size: cover;
      -moz-background-size: cover;
-       -o-background-size: cover;
           background-size: cover;
 }
 
@@ -2501,7 +2513,6 @@ main {
   background: center no-repeat;
   -webkit-background-size: cover;
      -moz-background-size: cover;
-       -o-background-size: cover;
           background-size: cover;
   background-color: #543d4f;
 }
@@ -2555,7 +2566,6 @@ main {
   background-position: center;
   -webkit-background-size: cover;
      -moz-background-size: cover;
-       -o-background-size: cover;
           background-size: cover;
   margin-bottom: 5px;
 }
@@ -2613,7 +2623,6 @@ main {
   background-position: center;
   -webkit-background-size: cover;
      -moz-background-size: cover;
-       -o-background-size: cover;
           background-size: cover;
   border: 5px solid #ffffff;
   margin: 10px;
@@ -4345,7 +4354,6 @@ a.skip-main:active {
     background-position: bottom;
     -webkit-background-size: contain;
        -moz-background-size: contain;
-         -o-background-size: contain;
             background-size: contain;
   }
   .featured-item .col-4 {
@@ -4359,7 +4367,6 @@ a.skip-main:active {
     background-image: url(img/ev-green.jpg);
     -webkit-background-size: 90% 100%;
        -moz-background-size: 90% 100%;
-         -o-background-size: 90% 100%;
             background-size: 90% 100%;
     background-repeat: no-repeat;
     min-height: 360px;
@@ -4719,8 +4726,8 @@ a.skip-main:active {
 2.0 Universal styles
 --------------------------------------------------------------*/
   .h--xxl {
-    font-size: 52px;
-    font-size: 5.2rem;
+    font-size: 49px;
+    font-size: 4.9rem;
   }
   /*--------------------------------------------------------------
 4.7 Contact

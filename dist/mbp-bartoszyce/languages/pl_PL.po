@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: wpg-bezcieniowapl\n"
 "Report-Msgid-Bugs-To: http://biblioteka.bartoszyce.pl\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2019-03-27 19:16+0100\n"
+"PO-Revision-Date: 2019-03-28 14:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pl_PL\n"
@@ -19,7 +19,7 @@ msgstr ""
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
@@ -156,14 +156,18 @@ msgstr "Adres"
 msgid "E-mail"
 msgstr "E-mail"
 
-#: src/components/features/section-contact.php:137,
+#: src/components/features/section-contact.php:141
+msgid "Show contact details for departments"
+msgstr "Pokaż dane kontaktowe do działów biblioteki"
+
+#: src/components/features/section-contact.php:161,
 #: src/inc/customizer/setting_control/inc_setting_contact.php:133
 msgid "Telephone number"
 msgstr "Numer telefonu"
 
-#: src/components/features/section-contact.php:163,
+#: src/components/features/section-contact.php:187,
 #: src/inc/customizer/custom_control_field/inc_field_open_hours.php:91,
-#: src/inc/customizer/setting_control/inc_setting_contact.php:197
+#: src/inc/customizer/setting_control/inc_setting_contact.php:231
 msgid "Opening Hours"
 msgstr "Godziny otwarcia"
 
@@ -230,7 +234,7 @@ msgstr "Menu nagłówka - Dolne "
 
 #: src/functions.php:167
 msgid "Sidebar Menu - Left "
-msgstr "Menu bocznego paska - Lewe"
+msgstr "Menu bocznego paska - Lewe "
 
 #: src/functions.php:267, src/inc/wcga_form.php:161, src/inc/wcga_form.php:179,
 #: src/inc/wcga_form.php:193
@@ -259,7 +263,7 @@ msgstr "Zamknij"
 
 #: src/functions.php:281
 msgid "Loading ..."
-msgstr "Ładowanie ... "
+msgstr "Ładowanie ..."
 
 #: src/functions.php:283
 msgid "Image"
@@ -349,7 +353,7 @@ msgstr "Pokaż sekcję"
 
 #: src/inc/customizer/setting_control/inc_setting_catl.php:63
 msgid "Digital archive of local tradition"
-msgstr "Cyfrowe Archiwum Tradycji Lokalnej "
+msgstr "Cyfrowe Archiwum Tradycji Lokalnej"
 
 #: src/inc/customizer/setting_control/inc_setting_catl.php:113
 msgid "Button title"
@@ -395,12 +399,16 @@ msgstr "Pokaż mapę w kontaktach"
 #: src/inc/customizer/setting_control/inc_setting_contact.php:103,
 #: src/inc/customizer/setting_control/inc_setting_contact.php:133,
 #: src/inc/customizer/setting_control/inc_setting_contact.php:163,
-#: src/inc/customizer/setting_control/inc_setting_contact.php:197,
-#: src/inc/customizer/setting_control/inc_setting_contact.php:229
+#: src/inc/customizer/setting_control/inc_setting_contact.php:231,
+#: src/inc/customizer/setting_control/inc_setting_contact.php:263
 msgid "Tab #"
 msgstr "Zakładka #"
 
-#: src/inc/customizer/setting_control/inc_setting_contact.php:229
+#: src/inc/customizer/setting_control/inc_setting_contact.php:187
+msgid "Contact page"
+msgstr "Strona z kontaktami"
+
+#: src/inc/customizer/setting_control/inc_setting_contact.php:263
 msgid "Select a location on map"
 msgstr "Zaznacz swoją lokalizację"
 
@@ -608,7 +616,7 @@ msgstr "<span class=\"screen-reader-text\">Strona komentarza</span>e %s"
 
 #: src/inc/template-tags.php:1099
 msgid "page: "
-msgstr "strona:"
+msgstr "strona: "
 
 #: src/inc/theme-functions.php:207
 msgid "Untitled"
