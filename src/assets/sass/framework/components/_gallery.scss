@@ -1,27 +1,14 @@
 /* Gallery
 ========================================================================== */
-
-.last-gallery{
-
-    .entry-content {
-        padding-top: gutter();
-        padding-bottom: 140px;
-        background-image: url("#{$svg-path}svg/arrow.svg");
-        background-size:100%;
-        background-position: bottom;
-        background-repeat: no-repeat;
-
-    }
-    .gallery-item {
-        max-height: calc(10vw*2);
-        padding: 0;
-    }
+.wp-block-gallery {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5em;
 }
 
 .gallery {
     margin-bottom: 1.5em;
 }
-
 .gallery-grid {
     ul {
         list-style: none;
@@ -29,31 +16,45 @@
         margin: 0;
     }
 }
-.archive, .blog {
-    .format-gallery {
-        .gallery-caption {
-            display: none;
-        }
-    }
+
+.blocks-gallery-item, .gallery-item {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  margin: 10px auto;
+
+  a img {
+    width: 100%;
+    display: block;
+  }
 }
+
+.blocks-gallery-item {
+  .columns-2 &,
+  .columns-3 &,
+  .columns-4 &,
+  .columns-5 &,
+  .columns-6 &,
+  .columns-7 &,
+  .columns-8 &,
+  .columns-9 & {
+    width: span(12 split);
+  }
+}
+
 .gallery-item {
-    display: inline-block;
-    text-align: center;
-    vertical-align: top;
-    margin: 10px gutter();
-
-
-    a img {
-        width: 100%;
-        display: block;
-    }
-
-    @for $col from 2 through 9 {
-        .gallery-columns-#{$col} & {
-            width:  span(12/$col split);
-        }
-    }
+  .gallery-columns-2 &,
+  .gallery-columns-3 &,
+  .gallery-columns-4 &,
+  .gallery-columns-5 &,
+  .gallery-columns-6 &,
+  .gallery-columns-7 &,
+  .gallery-columns-8 &,
+  .gallery-columns-9 & {
+      width: span(12 split);
+  }
 }
+
 
 /* Captions
 ========================================================================== */
@@ -73,4 +74,29 @@
     border-left: 1px solid scale-lightness($three-bw, 40%);
     border-right: 1px solid scale-lightness($three-bw, 40%);
     background: scale-lightness($three-bw, 50%);
+}
+
+
+/* RWD $desktop
+========================================================================== */
+@media (min-width: $desktop) {
+  .blocks-gallery-item {
+    margin-left: gutter();
+    margin-right: gutter();
+
+    @for $col from 2 through 9 {
+      .columns-#{$col} & {
+        width:  span(12/$col split);
+      }
+    }
+  }
+
+
+  .gallery-item {
+    @for $col from 2 through 9 {
+        .gallery-columns-#{$col} & {
+            width:  span(12/$col split);
+        }
+    }
+  }
 }

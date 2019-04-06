@@ -254,7 +254,7 @@ msgstr ""
 msgid "Select Category"
 msgstr ""
 
-#: src/inc/customizer/setting_control/inc_setting_blog.php:25, src/inc/customizer/wpg_customizer.php:425, src/inc/template-tags.php:1017, src/index.php:117, src/index.php:169
+#: src/inc/customizer/setting_control/inc_setting_blog.php:25, src/inc/customizer/wpg_customizer.php:425, src/inc/template-tags.php:1031, src/index.php:117, src/index.php:169
 msgid "Last post"
 msgstr ""
 
@@ -478,43 +478,43 @@ msgstr ""
 msgid "Newer Comments"
 msgstr ""
 
-#: src/inc/template-tags.php:1015
+#: src/inc/template-tags.php:1029
 msgid "Home"
 msgstr ""
 
-#: src/inc/template-tags.php:1019
+#: src/inc/template-tags.php:1033
 msgid "<span class=\"screen-reader-text\">Archive by Category</span> %s"
 msgstr ""
 
-#: src/inc/template-tags.php:1021
+#: src/inc/template-tags.php:1035
 msgid "<span class=\"screen-reader-text\">Search Results for</span> %s"
 msgstr ""
 
-#: src/inc/template-tags.php:1023
+#: src/inc/template-tags.php:1037
 msgid "<span class=\"screen-reader-text\">Posts Tagged</span> %s"
 msgstr ""
 
-#: src/inc/template-tags.php:1025
+#: src/inc/template-tags.php:1039
 msgid "<span class=\"screen-reader-text\">Articles Posted by</span> %s"
 msgstr ""
 
-#: src/inc/template-tags.php:1027
+#: src/inc/template-tags.php:1041
 msgid "<span class=\"screen-reader-text\">Error 404</span>"
 msgstr ""
 
-#: src/inc/template-tags.php:1029
+#: src/inc/template-tags.php:1043
 msgid "<span class=\"screen-reader-text\">Page</span> %s"
 msgstr ""
 
-#: src/inc/template-tags.php:1031
+#: src/inc/template-tags.php:1045
 msgid "<span class=\"screen-reader-text\">Comment Pag</span>e %s"
 msgstr ""
 
-#: src/inc/template-tags.php:1099
+#: src/inc/template-tags.php:1113
 msgid "page: "
 msgstr ""
 
-#: src/inc/theme-functions.php:207
+#: src/inc/theme-functions.php:249
 msgid "Untitled"
 msgstr ""
 

@@ -83,13 +83,14 @@
     .hide-desktop {
         display:none;
     }
-
+    @import "framework/components/_gallery--rwd_min-desktop";
     @import "framework/layout/gird__rwd-desktop";
 
     @import "theme/theme--rwd_min-desktop";
 
     @import "theme/nav/nav_horizontal__rwd-desktop";
     @import "theme/nav/nav_pagination__rwd-desktop";
+
 
 }
 /*--------------------------------------------------------------

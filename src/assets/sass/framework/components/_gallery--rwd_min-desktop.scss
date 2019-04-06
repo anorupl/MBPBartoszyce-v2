@@ -1,0 +1,10 @@
+/*----------------------------------
+ *  Gallery RWD -- phone
+ * ---------------------------------*/
+.gallery-item {
+  @for $col from 2 through 9 {
+      .gallery-columns-#{$col} & {
+          width:  span(12/$col split);
+      }
+  }
+}

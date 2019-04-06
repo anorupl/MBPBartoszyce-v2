@@ -781,22 +781,10 @@ code {
 
 /* Gallery
 ========================================================================== */
-.last-gallery .entry-content {
-  padding-top: 2.08333%;
-  padding-bottom: 140px;
-  background-image: url("img/svg/svg/arrow.svg");
-  -webkit-background-size: 100% 100%;
-     -moz-background-size: 100%;
-          background-size: 100%;
-  background-position: bottom;
-  background-repeat: no-repeat;
-}
-
-.last-gallery .gallery-item {
-  max-height: -webkit-calc(10vw*2);
-  max-height: -moz-calc(10vw*2);
-  max-height: calc(10vw*2);
+.wp-block-gallery {
+  list-style: none;
   padding: 0;
+  margin: 0 0 1.5em;
 }
 
 .gallery {
@@ -809,52 +797,38 @@ code {
   margin: 0;
 }
 
-.archive .format-gallery .gallery-caption, .blog .format-gallery .gallery-caption {
-  display: none;
-}
-
-.gallery-item {
+.blocks-gallery-item, .gallery-item {
   display: inline-block;
   text-align: center;
   vertical-align: top;
-  margin: 10px 2.08333%;
+  margin: 10px auto;
 }
 
-.gallery-item a img {
+.blocks-gallery-item a img, .gallery-item a img {
   width: 100%;
   display: block;
 }
 
-.gallery-columns-2 .gallery-item {
-  width: 45.83333%;
+.columns-2 .blocks-gallery-item,
+.columns-3 .blocks-gallery-item,
+.columns-4 .blocks-gallery-item,
+.columns-5 .blocks-gallery-item,
+.columns-6 .blocks-gallery-item,
+.columns-7 .blocks-gallery-item,
+.columns-8 .blocks-gallery-item,
+.columns-9 .blocks-gallery-item {
+  width: 95.83333%;
 }
 
-.gallery-columns-3 .gallery-item {
-  width: 29.16667%;
-}
-
-.gallery-columns-4 .gallery-item {
-  width: 20.83333%;
-}
-
-.gallery-columns-5 .gallery-item {
-  width: 15.83333%;
-}
-
-.gallery-columns-6 .gallery-item {
-  width: 12.5%;
-}
-
-.gallery-columns-7 .gallery-item {
-  width: 10.11905%;
-}
-
-.gallery-columns-8 .gallery-item {
-  width: 8.33333%;
-}
-
+.gallery-columns-2 .gallery-item,
+.gallery-columns-3 .gallery-item,
+.gallery-columns-4 .gallery-item,
+.gallery-columns-5 .gallery-item,
+.gallery-columns-6 .gallery-item,
+.gallery-columns-7 .gallery-item,
+.gallery-columns-8 .gallery-item,
 .gallery-columns-9 .gallery-item {
-  width: 6.94444%;
+  width: 95.83333%;
 }
 
 /* Captions
@@ -876,6 +850,63 @@ code {
   border-left: 1px solid #f4f4f4;
   border-right: 1px solid #f4f4f4;
   background: #f6f6f6;
+}
+
+/* RWD $desktop
+========================================================================== */
+@media (min-width: 62em) {
+  .blocks-gallery-item {
+    margin-left: 2.08333%;
+    margin-right: 2.08333%;
+  }
+  .columns-2 .blocks-gallery-item {
+    width: 45.83333%;
+  }
+  .columns-3 .blocks-gallery-item {
+    width: 29.16667%;
+  }
+  .columns-4 .blocks-gallery-item {
+    width: 20.83333%;
+  }
+  .columns-5 .blocks-gallery-item {
+    width: 15.83333%;
+  }
+  .columns-6 .blocks-gallery-item {
+    width: 12.5%;
+  }
+  .columns-7 .blocks-gallery-item {
+    width: 10.11905%;
+  }
+  .columns-8 .blocks-gallery-item {
+    width: 8.33333%;
+  }
+  .columns-9 .blocks-gallery-item {
+    width: 6.94444%;
+  }
+  .gallery-columns-2 .gallery-item {
+    width: 45.83333%;
+  }
+  .gallery-columns-3 .gallery-item {
+    width: 29.16667%;
+  }
+  .gallery-columns-4 .gallery-item {
+    width: 20.83333%;
+  }
+  .gallery-columns-5 .gallery-item {
+    width: 15.83333%;
+  }
+  .gallery-columns-6 .gallery-item {
+    width: 12.5%;
+  }
+  .gallery-columns-7 .gallery-item {
+    width: 10.11905%;
+  }
+  .gallery-columns-8 .gallery-item {
+    width: 8.33333%;
+  }
+  .gallery-columns-9 .gallery-item {
+    width: 6.94444%;
+  }
 }
 
 /* Headings
@@ -4105,6 +4136,33 @@ a.skip-main:active {
 @media (min-width: 62em) {
   .hide-desktop {
     display: none;
+  }
+  /*----------------------------------
+ *  Gallery RWD -- phone
+ * ---------------------------------*/
+  .gallery-columns-2 .gallery-item {
+    width: 45.83333%;
+  }
+  .gallery-columns-3 .gallery-item {
+    width: 29.16667%;
+  }
+  .gallery-columns-4 .gallery-item {
+    width: 20.83333%;
+  }
+  .gallery-columns-5 .gallery-item {
+    width: 15.83333%;
+  }
+  .gallery-columns-6 .gallery-item {
+    width: 12.5%;
+  }
+  .gallery-columns-7 .gallery-item {
+    width: 10.11905%;
+  }
+  .gallery-columns-8 .gallery-item {
+    width: 8.33333%;
+  }
+  .gallery-columns-9 .gallery-item {
+    width: 6.94444%;
   }
   /* Gird 12 column
 ========================================================================== */

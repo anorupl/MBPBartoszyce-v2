@@ -60,10 +60,10 @@ function wpg_share() {
 * @return 	string
 */
 function wpg_meta( $author=false, $time=true, $comments=true, $category=true, $class='') {
-  
+
   // print meta container
   printf('<div class="entry-meta %1$s">', $class);
-  
+
   // print meta - author
   if ($author == true)	{
     printf('<div class="meta-item hidde-small">
@@ -73,7 +73,7 @@ function wpg_meta( $author=false, $time=true, $comments=true, $category=true, $c
     __('Author', 'wpg_theme'),
     get_the_author());
   }
-  
+
   // print meta - data
   if ($time == true) {
     printf('
@@ -85,38 +85,38 @@ function wpg_meta( $author=false, $time=true, $comments=true, $category=true, $c
     esc_attr( get_the_date( 'c' ) ),
     esc_html( get_the_date() ));
   }
-  
+
   // print meta - comments
   if ( $comments == true && ! post_password_required() && ( comments_open() || get_comments_number() ))	{
     echo '<div class="meta-item hidde-small"><span class="meta-left"><i class="icon-bubbles"></i></span><span class="meta-right">';
     comments_popup_link( sprintf( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'wpg_theme' ), get_the_title() ) );
     echo '</span></div>';
   }
-  
+
   // print meta - category/taxonomy
   if ($category == true) {
     if ('post' === get_post_type()) {
       //Get category
       $category_list = get_the_category_list( ',', '', false );
-      
+
       printf('<div class="meta-item"><span class="meta-left"><i class="icon-folder-open"></i></span><span class="meta-right"><span class="screen-reader-text">%1$s: </span>%2$s</span></div>',
       __('Category', 'wpg_theme'),
       $category_list);
     } else {
-      
+
       global $post;
-      
+
       // Get post type taxonomies
       $taxonomies = get_object_taxonomies( $post->post_type, 'objects' );
-      
+
       // Empty array for terms
       $out = array();
-      
+
       foreach ( $taxonomies as $taxonomy_slug => $taxonomy ){
-        
+
         // get the terms related to post
         $terms = get_the_terms( $post->ID, $taxonomy_slug );
-        
+
         if ( !empty( $terms ) ) {
           foreach ( $terms as $term ) {
             $out[] = '<a href="'.    get_term_link( $term->slug, $taxonomy_slug ) .'">'.$term->name."</a>";
@@ -146,21 +146,21 @@ function wpg_meta( $author=false, $time=true, $comments=true, $category=true, $c
 * @return string
 */
 function wpg_the_limit_category_list( $separator = '',$limit = 3, $parents='', $post_id = false  ) {
-  
+
   if ( ! is_object_in_taxonomy( get_post_type( $post_id ), 'category' ) ) {
     return false;
   }
-  
+
   $categories = get_the_category( $post_id );
-  
+
   if ( empty( $categories)) {
     return false;
   }
-  
+
   $rel = 'rel="category tag"';
   $thelist = '';
   $i = 0;
-  
+
   foreach ( $categories as $category ) {
     if ( $limit > $i) {
       if (0 < $i )
@@ -197,18 +197,18 @@ function wpg_the_limit_category_list( $separator = '',$limit = 3, $parents='', $
 * @return 	string
 */
 function wpg_title_shorten($length=200,$after='...') {
-  
+
   $mytitle = get_the_title();
-  
+
   if (strlen($mytitle) > $length) {
-    
+
     $mytitle 	= substr($mytitle, 0, $length);
     $i 	  		= strrpos($mytitle, " ");
     $mytitle 	= substr($mytitle, 0, $i);
-    
+
     echo $mytitle;
     echo $after;
-    
+
   } else {
     echo $mytitle;
   }
@@ -229,7 +229,7 @@ function wpg_comment_nav() {
         if ( $prev_link = get_previous_comments_link( __( 'Older Comments', 'wpg_theme' ) ) ) :
           printf( '<div class="nav-previous">%s</div>', $prev_link );
         endif;
-        
+
         if ( $next_link = get_next_comments_link( __( 'Newer Comments', 'wpg_theme' ) ) ) :
           printf( '<div class="nav-next">%s</div>', $next_link );
         endif;
@@ -249,10 +249,10 @@ function wpg_comment_nav() {
 * @return	string with html
 */
 function wpg_get_last_post_gallery(  $post_id, $html = true ) {
-  
+
   if ( $post_id ) {
     $post_gallery = get_post_galleries( $post_id, $html );
-    
+
     return end($post_gallery);
   }
 }
@@ -267,27 +267,34 @@ function wpg_get_last_post_gallery(  $post_id, $html = true ) {
 * @return	string with html
 */
 function wpg_the_image_attachment($size = 'large', $limit = 0,$column= 3, $offset = 0) {
-  
+
   global $post;
-  
+
   $thumb_id = get_post_thumbnail_id($post->ID); // gets the post thumbnail ID
-  $images 	= get_children( array('post_parent' => $post->ID, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'exclude' => $thumb_id ) );
-  
+  $images 	= get_children( array(
+    'post_parent' => $post->ID,
+    'post_status' => 'inherit',
+    'post_type' => 'attachment',
+    'post_mime_type' => 'image',
+    'order' => 'ASC',
+    'exclude' => $thumb_id
+  ));
+
   if ($images) {
-    
+
     $num_of_images = count($images);
-    
+
     if ($offset > 0) : $start = $offset--; else : $start = 0; endif;
     if ($limit > 0) : $stop = $limit+$start; else : $stop = $num_of_images; endif;
-    
+
     $i = 0;
     echo '<div id="gallery-'. $post->ID .'" class="gallery gallery-columns-'. $column. '">';
-    
+
     foreach ($images as $image) {
       if ($start <= $i and $i < $stop) {
-        
+
         $image_attributes   = wp_get_attachment_image_src( $image->ID, $size );
-        
+
         printf('<figure class="gallery-item"><div class="gallery-icon"><a  href="%1$s" target="_blank"><img src="%2$s" alt="%3$s" /></a></div></figure>',
         $image->guid,
         $image_attributes[0],
@@ -307,13 +314,13 @@ function wpg_the_image_attachment($size = 'large', $limit = 0,$column= 3, $offse
 * @return string
 */
 function wpg_quote() {
-  
+
   $content = apply_filters( 'the_content', get_the_content() );
-  
+
   preg_match('/<blockquote.*?<\/blockquote>/is', $content, $matches_blockquote);
-  
+
   echo $matches_blockquote ? $matches_blockquote[0] : '';
-  
+
 }
 
 
@@ -324,15 +331,15 @@ function wpg_quote() {
 * @return	string
 */
 function wpg_embedded_content($type=array()) {
-  
+
   if (!empty($type)){
-    
+
     $content = apply_filters( 'the_content', get_the_content() );
-    
+
     $media = get_media_embedded_in_content($content, $type);
-    
+
     echo !empty($media) ? $media[0] : '';
-    
+
   }
 }
 
@@ -344,15 +351,15 @@ function wpg_embedded_content($type=array()) {
 */
 function wpg_catch_that_image() {
   global $post;
-  
+
   $first_img = get_template_directory_uri() . '/img/svg/one.svg';
-  
+
   $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-  
+
   if(isset($matches[1][0])) {
     $first_img = $matches[1][0];
   }
-  
+
   return $first_img;
 }
 
@@ -367,21 +374,21 @@ function wpg_catch_that_image() {
 */
 function wpg_no_thumbnail($format = 'figure', $image_content = false)
 {
-  
+
   global $post;
-  
+
   $class = 'img-thumb';
   $first_img = get_template_directory_uri() . '/img/default/no_image.jpg';
-  
+
   if ($image_content == true) {
     preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-    
+
     if (isset($matches[1][0])) {
       $class = 'img-thumb';
       $first_img = $matches[1][0];
     }
   }
-  
+
   switch ($format) {
     case 'link':
     printf('<a class="link-thumbnail %1$s" href="%2$s" ><img src="%3$s" alt="" /></a>',
@@ -389,13 +396,13 @@ function wpg_no_thumbnail($format = 'figure', $image_content = false)
     esc_url(get_permalink()),
     $first_img);
     break;
-    
+
     case 'image':
     printf('<img class="image-thumbnail %1$s" src="%2$s" alt="" />',
     esc_attr($class),
     $first_img);
     break;
-    
+
     default:
     printf('<figure class="post-thumbnail %1$s"><a href="%2$s" aria-hidden="true"><img src="%3$s" alt="" /></a></figure>',
     esc_attr($class),
@@ -415,9 +422,9 @@ function wpg_no_thumbnail($format = 'figure', $image_content = false)
 * @return string The Link format URL.
 */
 function wpg_get_link_url(){
-  
+
   $has_url = get_url_in_content(get_the_content());
-  
+
   return $has_url ? $has_url : apply_filters('the_permalink', get_permalink());
 }
 
@@ -433,7 +440,7 @@ function wpg_get_link_url(){
 */
 function wpg_strip_shortcode_gallery($content, $code){
   preg_match_all('/' . get_shortcode_regex() . '/s', $content, $matches, PREG_SET_ORDER);
-  
+
   if (!empty($matches)) {
     foreach ($matches as $shortcode) {
       if ($code === $shortcode[2]) {
@@ -444,11 +451,11 @@ function wpg_strip_shortcode_gallery($content, $code){
         }
       }
     }
-    
+
     $content = str_replace(']]>', ']]&gt;', apply_filters('the_content', $content));
-    
+
     echo $content;
-    
+
   } else {
     echo apply_filters('the_content', $content);
   }
@@ -462,7 +469,7 @@ function wpg_strip_shortcode_gallery($content, $code){
 * @return string html
 */
 function wpg_the_thumbnail( $size='thumbnail' ){
-  
+
   if (has_post_thumbnail()) {
     the_post_thumbnail( ($size) );
   } else {
@@ -475,24 +482,24 @@ function wpg_the_thumbnail( $size='thumbnail' ){
 */
 function the_list_terms(){
   global $post;
-  
+
   // Get post type taxonomies
   $taxonomies = get_object_taxonomies( $post->post_type, 'objects' );
-  
+
   // Empty array for terms
   $out = array();
-  
+
   foreach ( $taxonomies as $taxonomy_slug => $taxonomy ){
-    
+
     // get the terms related to post
     $terms = get_the_terms( $post->ID, $taxonomy_slug );
-    
+
     if ( !empty( $terms ) ) {
       foreach ( $terms as $term ) {
         $out[] = '<a href="'.    get_term_link( $term->slug, $taxonomy_slug ) .'">'.$term->name."</a>, ";
       }
     }
-    
+
   }
   echo implode('', $out );
 }
@@ -514,7 +521,7 @@ function wpg_breadcrumbs() {
   $text['404']       = __('<span class="screen-reader-text">Error 404</span>','wpg_theme'); // text for the 404 page
   $text['page']      = __('<span class="screen-reader-text">Page</span> %s','wpg_theme'); // text 'Page N'
   $text['cpage']     = __('<span class="screen-reader-text">Comment Pag</span>e %s','wpg_theme'); // text 'Comment Page N'
-  
+
   $sep            = '›'; // separator between crumbs
   $sep_before     = '<span class="sep">'; // tag before separator
   $sep_after      = '</span>'; // tag after separator
@@ -526,10 +533,10 @@ function wpg_breadcrumbs() {
   $wrap_before    = '<span class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">'; // the opening wrapper tag
     $wrap_after     = '</span><!-- .breadcrumbs -->'; // the closing wrapper tag
     /* === END OF OPTIONS === */
-    
+
     global $post;
     global $paged;
-    
+
     $home_url       = home_url('/');
     $link_before    = '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">';
       $link_after     = '</span>';
@@ -541,27 +548,27 @@ function wpg_breadcrumbs() {
       $parent_id      = ($post) ? $post->post_parent : '';
       $sep            = ' ' . $sep_before . $sep . $sep_after . ' ';
       $home_link      = $link_before . '<a href="' . $home_url . '"' . $link_attr . ' class="home">' . $link_in_before . $text['home'] . $link_in_after . '</a>' . $link_after;
-      
+
       if (is_home() || is_front_page()) {
         if ($show_on_home) {
           if ( $paged > 1 ) {
             echo $wrap_before .
-            
+
             $link_before . '<a href="' . $home_url . '"' . $link_attr . ' class="home">' . $link_in_before . $text['home_blog'] . $link_in_after . '</a>' . $link_after . $sep_before . $sep . $sep_after . $before . __('page: ', 'wpg_theme') . $paged . $after . $wrap_after;
           } else {
             echo $wrap_before . $home_link . $wrap_after;
           }
         }
       } else {
-        
+
         echo $wrap_before;
-        
+
         if ($show_home_link) echo $home_link;
-        
+
         if(is_category() || is_tax() ){
-          
+
           $query_obj = get_queried_object();
-          
+
           if ($query_obj->parent != 0) {
             $cats = get_term_parents_list($query_obj->parent, $query_obj->taxonomy, array(
               'separator' => $sep,
@@ -570,9 +577,9 @@ function wpg_breadcrumbs() {
             ));
             $cats = preg_replace("#^(.+)$sep$#", "$1", $cats);
             $cats = preg_replace('#<a([^>]+)>([^<]+)<\/a>#', $link_before . '<a$1' . $link_attr .'>' . $link_in_before . '$2' . $link_in_after .'</a>' . $link_after, $cats);
-            
+
             if ($show_home_link) echo $sep;
-            
+
             echo $cats;
           }
           if ( get_query_var('paged') ) {
@@ -629,9 +636,9 @@ function wpg_breadcrumbs() {
           }
           // custom post type
         } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
-          
+
           $post_type = get_post_type_object(get_post_type());
-          
+
           if ( get_query_var('paged') ) {
             echo $sep . sprintf($link, get_post_type_archive_link($post_type->name), $post_type->label) . $sep . $before . sprintf($text['page'], get_query_var('paged')) . $after;
           } else {
@@ -696,4 +703,3 @@ function wpg_breadcrumbs() {
         echo $wrap_after;
       }
     }
-    
