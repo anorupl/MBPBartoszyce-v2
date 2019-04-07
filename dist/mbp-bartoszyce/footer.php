@@ -34,6 +34,6 @@ if (get_theme_mod('wpg_partners_active', false) === true) {
   <?php endif; ?>
   &copy; <?php echo date("Y"); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>.<?php  _e('All Rights Reserved', 'wpg_theme'); ?>
 </div>
-<?php wp_footer(); ?>
+<?php wp_footer();?>
 </body>
 </html>

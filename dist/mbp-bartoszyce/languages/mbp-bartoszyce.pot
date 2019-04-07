@@ -514,7 +514,7 @@ msgstr ""
 msgid "page: "
 msgstr ""
 
-#: src/inc/theme-functions.php:249
+#: src/inc/theme-functions.php:279
 msgid "Untitled"
 msgstr ""
 
