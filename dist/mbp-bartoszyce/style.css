@@ -797,14 +797,16 @@ code {
   margin: 0;
 }
 
-.blocks-gallery-item, .gallery-item {
+.blocks-gallery-item,
+.gallery-item {
   display: inline-block;
   text-align: center;
   vertical-align: top;
-  margin: 10px auto;
+  margin: 10px 2.08333%;
 }
 
-.blocks-gallery-item a img, .gallery-item a img {
+.blocks-gallery-item a img,
+.gallery-item a img {
   width: 100%;
   display: block;
 }
@@ -2425,7 +2427,6 @@ main {
   background-image: url(img/svg/trianglify.svg);
   -webkit-background-size: cover;
      -moz-background-size: cover;
-       -o-background-size: cover;
           background-size: cover;
 }
 
@@ -2545,7 +2546,6 @@ main {
   background: center no-repeat;
   -webkit-background-size: cover;
      -moz-background-size: cover;
-       -o-background-size: cover;
           background-size: cover;
   background-color: #543d4f;
 }
@@ -2599,7 +2599,6 @@ main {
   background-position: center;
   -webkit-background-size: cover;
      -moz-background-size: cover;
-       -o-background-size: cover;
           background-size: cover;
   margin-bottom: 5px;
 }
@@ -2657,7 +2656,6 @@ main {
   background-position: center;
   -webkit-background-size: cover;
      -moz-background-size: cover;
-       -o-background-size: cover;
           background-size: cover;
   border: 5px solid #ffffff;
   margin: 10px;
@@ -4392,6 +4390,9 @@ a.skip-main:active {
     background-color: #543d4f;
     opacity: 0.5;
   }
+  .tag-bezkoloru.f-post::before {
+    background-color: transparent;
+  }
   .arrow-allpost-icon {
     float: right;
   }
@@ -4416,7 +4417,6 @@ a.skip-main:active {
     background-position: bottom;
     -webkit-background-size: contain;
        -moz-background-size: contain;
-         -o-background-size: contain;
             background-size: contain;
   }
   .featured-item .col-4 {
@@ -4430,7 +4430,6 @@ a.skip-main:active {
     background-image: url(img/ev-green.jpg);
     -webkit-background-size: 90% 100%;
        -moz-background-size: 90% 100%;
-         -o-background-size: 90% 100%;
             background-size: 90% 100%;
     background-repeat: no-repeat;
     min-height: 360px;

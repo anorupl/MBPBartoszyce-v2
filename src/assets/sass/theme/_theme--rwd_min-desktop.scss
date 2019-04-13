@@ -171,6 +171,9 @@
     background-color: $one-color;
     opacity: 0.5;
 }
+.tag-bezkoloru.f-post::before {
+  background-color: transparent;
+}
 
 .arrow-allpost-icon {
   float: right;

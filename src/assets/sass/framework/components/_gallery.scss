@@ -17,11 +17,12 @@
     }
 }
 
-.blocks-gallery-item, .gallery-item {
+.blocks-gallery-item,
+.gallery-item {
   display: inline-block;
   text-align: center;
   vertical-align: top;
-  margin: 10px auto;
+  margin: 10px gutter();
 
   a img {
     width: 100%;
