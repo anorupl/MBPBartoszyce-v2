@@ -7,14 +7,14 @@
 }
 
 .gallery {
-    margin-bottom: 1.5em;
+  margin-bottom: 1.5em;
 }
 .gallery-grid {
-    ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .blocks-gallery-item,
@@ -22,8 +22,8 @@
   display: inline-block;
   text-align: center;
   vertical-align: top;
-  margin: 10px gutter();
-
+  padding: 2px;
+  
   a img {
     width: 100%;
     display: block;
@@ -39,7 +39,7 @@
   .columns-7 &,
   .columns-8 &,
   .columns-9 & {
-    width: span(12 split);
+    width: span(12);
   }
 }
 
@@ -52,7 +52,7 @@
   .gallery-columns-7 &,
   .gallery-columns-8 &,
   .gallery-columns-9 & {
-      width: span(12 split);
+    width: span(12);
   }
 }
 
@@ -60,21 +60,21 @@
 /* Captions
 ========================================================================== */
 .wp-caption {
-    margin-bottom: 1.75em;
-    max-width: 100%;
-    img {
-        display: block;
-    }
+  margin-bottom: 1.75em;
+  max-width: 100%;
+  img {
+    display: block;
+  }
 }
 
 .gallery-caption,
 .wp-caption-text  {
-    padding: gutter();
-    @include font-size-procent($font-size-s);
-    border-bottom: 1px solid scale-lightness($three-bw, 40%);
-    border-left: 1px solid scale-lightness($three-bw, 40%);
-    border-right: 1px solid scale-lightness($three-bw, 40%);
-    background: scale-lightness($three-bw, 50%);
+  padding: gutter();
+  @include font-size-procent($font-size-s);
+  border-bottom: 1px solid scale-lightness($three-bw, 40%);
+  border-left: 1px solid scale-lightness($three-bw, 40%);
+  border-right: 1px solid scale-lightness($three-bw, 40%);
+  background: scale-lightness($three-bw, 50%);
 }
 
 
@@ -82,22 +82,19 @@
 ========================================================================== */
 @media (min-width: $desktop) {
   .blocks-gallery-item {
-    margin-left: gutter();
-    margin-right: gutter();
-
     @for $col from 2 through 9 {
       .columns-#{$col} & {
-        width:  span(12/$col split);
+        width:  span(12/$col);
       }
     }
   }
-
-
+  
+  
   .gallery-item {
     @for $col from 2 through 9 {
-        .gallery-columns-#{$col} & {
-            width:  span(12/$col split);
-        }
+      .gallery-columns-#{$col} & {
+        width:  span(12/$col);
+      }
     }
   }
 }

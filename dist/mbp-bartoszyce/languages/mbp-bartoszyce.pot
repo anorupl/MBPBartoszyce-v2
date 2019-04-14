@@ -70,19 +70,19 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: src/components/content_single/content-club.php:83, src/components/content_single/content-collection.php:85, src/components/content_single/content-event.php:69, src/components/content_single/content.php:85
+#: src/components/content_single/content-collection.php:85, src/components/content_single/content-event.php:69
 msgid "Next"
 msgstr ""
 
-#: src/components/content_single/content-club.php:85, src/components/content_single/content-collection.php:87, src/components/content_single/content-event.php:71, src/components/content_single/content.php:87
+#: src/components/content_single/content-collection.php:87, src/components/content_single/content-event.php:71
 msgid "Next post:"
 msgstr ""
 
-#: src/components/content_single/content-club.php:89, src/components/content_single/content-collection.php:91, src/components/content_single/content-event.php:75, src/components/content_single/content.php:91
+#: src/components/content_single/content-collection.php:91, src/components/content_single/content-event.php:75
 msgid "Previous"
 msgstr ""
 
-#: src/components/content_single/content-club.php:91, src/components/content_single/content-collection.php:93, src/components/content_single/content-event.php:77, src/components/content_single/content.php:93
+#: src/components/content_single/content-collection.php:93, src/components/content_single/content-event.php:77
 msgid "Previous post:"
 msgstr ""
 
@@ -514,7 +514,7 @@ msgstr ""
 msgid "page: "
 msgstr ""
 
-#: src/inc/theme-functions.php:297
+#: src/inc/theme-functions.php:275
 msgid "Untitled"
 msgstr ""
 

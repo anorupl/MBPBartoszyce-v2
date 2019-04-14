@@ -1,15 +1,15 @@
 /*
-Theme Name: MBP Bartoszyce
-Theme URI: http://biblioteka.bartoszyce.pl
-Author: Kamil Żerebny
-Author URI: http://zerebny.ovh
-Description: Theme for MBP Bartoszyce
-Version: 0.1.0
-Licence: GPL-2.0
-Licence URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column,responsive-layout,custom-menu,featured-images,microformats,threaded-comments,translation-ready
-Text Domain: wpg_theme
-*/
+		Theme Name: MBP Bartoszyce
+		Theme URI: http://biblioteka.bartoszyce.pl
+		Author: Kamil Żerebny
+		Author URI: http://zerebny.ovh
+		Description: Theme for MBP Bartoszyce
+		Version: 0.1.0
+		Licence: GPL-2.0
+		Licence URI: http://www.gnu.org/licenses/gpl-2.0.html
+		Tags: one-column,responsive-layout,custom-menu,featured-images,microformats,threaded-comments,translation-ready
+		Text Domain: wpg_theme
+		*/
 @charset "UTF-8";
 /*--------------------------------------------------------------
 -- setting/
@@ -65,7 +65,9 @@ Text Domain: wpg_theme
   font-style: normal;
 }
 
-[class^="icon-"], blockquote:before, .comment-reply-title small a:before, .h-nav--arrow .menu > .menu-item-has-children > a:after, .h-nav--arrow .sub-menu .menu-item-has-children > a:after, .small-menu .menu li li.menu-item > a:before {
+.i-style, blockquote:before, .h-nav--arrow .menu > .menu-item-has-children > a:after, .h-nav--arrow .sub-menu .menu-item-has-children > a:after, .small-menu .menu li li.menu-item a:before,
+[class^="icon-"],
+.comment-reply-title small a:before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -77,14 +79,19 @@ Text Domain: wpg_theme
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: inherit;
+  position: relative;
   line-height: 1;
   display: inline-block;
-  padding: 0 10px;
-  min-width: 40px;
   text-align: center;
   bottom: -2px;
-  position: relative;
   margin-left: -0.05em;
+}
+
+.i-size, .small-menu .menu li li.menu-item a:before,
+[class^="icon-"],
+.comment-reply-title small a:before {
+  padding: 0 10px;
+  min-width: 40px;
 }
 
 .l-icon,
@@ -802,7 +809,7 @@ code {
   display: inline-block;
   text-align: center;
   vertical-align: top;
-  margin: 10px 2.08333%;
+  padding: 2px;
 }
 
 .blocks-gallery-item a img,
@@ -819,7 +826,7 @@ code {
 .columns-7 .blocks-gallery-item,
 .columns-8 .blocks-gallery-item,
 .columns-9 .blocks-gallery-item {
-  width: 95.83333%;
+  width: 100%;
 }
 
 .gallery-columns-2 .gallery-item,
@@ -830,7 +837,7 @@ code {
 .gallery-columns-7 .gallery-item,
 .gallery-columns-8 .gallery-item,
 .gallery-columns-9 .gallery-item {
-  width: 95.83333%;
+  width: 100%;
 }
 
 /* Captions
@@ -857,57 +864,53 @@ code {
 /* RWD $desktop
 ========================================================================== */
 @media (min-width: 62em) {
-  .blocks-gallery-item {
-    margin-left: 2.08333%;
-    margin-right: 2.08333%;
-  }
   .columns-2 .blocks-gallery-item {
-    width: 45.83333%;
+    width: 50%;
   }
   .columns-3 .blocks-gallery-item {
-    width: 29.16667%;
+    width: 33.33333%;
   }
   .columns-4 .blocks-gallery-item {
-    width: 20.83333%;
+    width: 25%;
   }
   .columns-5 .blocks-gallery-item {
-    width: 15.83333%;
+    width: 20%;
   }
   .columns-6 .blocks-gallery-item {
-    width: 12.5%;
+    width: 16.66667%;
   }
   .columns-7 .blocks-gallery-item {
-    width: 10.11905%;
+    width: 14.28571%;
   }
   .columns-8 .blocks-gallery-item {
-    width: 8.33333%;
-  }
-  .columns-9 .blocks-gallery-item {
-    width: 6.94444%;
-  }
-  .gallery-columns-2 .gallery-item {
-    width: 45.83333%;
-  }
-  .gallery-columns-3 .gallery-item {
-    width: 29.16667%;
-  }
-  .gallery-columns-4 .gallery-item {
-    width: 20.83333%;
-  }
-  .gallery-columns-5 .gallery-item {
-    width: 15.83333%;
-  }
-  .gallery-columns-6 .gallery-item {
     width: 12.5%;
   }
+  .columns-9 .blocks-gallery-item {
+    width: 11.11111%;
+  }
+  .gallery-columns-2 .gallery-item {
+    width: 50%;
+  }
+  .gallery-columns-3 .gallery-item {
+    width: 33.33333%;
+  }
+  .gallery-columns-4 .gallery-item {
+    width: 25%;
+  }
+  .gallery-columns-5 .gallery-item {
+    width: 20%;
+  }
+  .gallery-columns-6 .gallery-item {
+    width: 16.66667%;
+  }
   .gallery-columns-7 .gallery-item {
-    width: 10.11905%;
+    width: 14.28571%;
   }
   .gallery-columns-8 .gallery-item {
-    width: 8.33333%;
+    width: 12.5%;
   }
   .gallery-columns-9 .gallery-item {
-    width: 6.94444%;
+    width: 11.11111%;
   }
 }
 
@@ -2427,6 +2430,7 @@ main {
   background-image: url(img/svg/trianglify.svg);
   -webkit-background-size: cover;
      -moz-background-size: cover;
+       -o-background-size: cover;
           background-size: cover;
 }
 
@@ -2546,6 +2550,7 @@ main {
   background: center no-repeat;
   -webkit-background-size: cover;
      -moz-background-size: cover;
+       -o-background-size: cover;
           background-size: cover;
   background-color: #543d4f;
 }
@@ -2599,6 +2604,7 @@ main {
   background-position: center;
   -webkit-background-size: cover;
      -moz-background-size: cover;
+       -o-background-size: cover;
           background-size: cover;
   margin-bottom: 5px;
 }
@@ -2656,6 +2662,7 @@ main {
   background-position: center;
   -webkit-background-size: cover;
      -moz-background-size: cover;
+       -o-background-size: cover;
           background-size: cover;
   border: 5px solid #ffffff;
   margin: 10px;
@@ -3470,30 +3477,30 @@ a.skip-main:active {
 -- theme/nav/
 --------------------------------------------------------------*/
 /*
- * All
- * */
+* All
+* */
 .h-nav {
   font-family: Roboto, "Open Sans", sans-serif;
   /*
-     *  li all
-     * -----------*/
+  *  li all
+  * -----------*/
   /*
-     *  ul
-     * -----------*/
+  *  ul
+  * -----------*/
   /*
-     *  ul ul
-     * -----------*/
+  *  ul ul
+  * -----------*/
   /* li - submenu active*/
   /*
-     *  ul ul ul
-     * -----------*/
+  *  ul ul ul
+  * -----------*/
   /* li li - submenu active*/
   /*
-     *  current li a
-     * -----------*/
+  *  current li a
+  * -----------*/
   /*
-     *  highlight
-     * -----------*/
+  *  highlight
+  * -----------*/
 }
 
 .h-nav li {
@@ -3531,20 +3538,20 @@ a.skip-main:active {
   position: absolute;
   left: -999em;
   margin-top: 10px;
-  max-width: 200px;
   font-family: Lato, Arial, Helvetica, sans-serif;
   z-index: 3;
 }
 
 .h-nav .sub-menu li {
   clear: both;
-  padding: 0 10px;
-  min-width: 210px;
+  padding: 0;
+  min-width: 220px;
+  max-width: 220px;
   text-align: left;
 }
 
 .h-nav .sub-menu li a {
-  padding: 10px 15px;
+  padding: 10px;
 }
 
 .h-nav .menu > li:hover > .sub-menu,
@@ -3569,10 +3576,6 @@ a.skip-main:active {
 
 .h-nav .menu > li.menu-item-has-children {
   text-align: center;
-}
-
-.h-nav .menu-item-has-children {
-  width: 200px;
 }
 
 .h-nav .current_page_item > a,
@@ -3622,10 +3625,11 @@ a.skip-main:active {
 }
 
 .h-nav--arrow {
+  margin-right: 3.5%;
   /* Add border arrow */
   /*
-     *  strzalki
-     * -----------*/
+  *  strzalki
+  * -----------*/
   /* pierwszy poziom strzalka w dół */
   /* drugi poziom strzalkaw prawo */
 }
@@ -3663,6 +3667,11 @@ a.skip-main:active {
 
 .h-nav--arrow .sub-menu .menu-item-has-children > a:after {
   content: "\f105";
+}
+
+.h-nav--arrow a:after {
+  padding: 0 2px;
+  min-width: 35px;
 }
 
 .h-nav--desc {
@@ -3867,7 +3876,7 @@ a.skip-main:active {
   padding: 0;
   font-size: 42px;
   font-size: 4.2rem;
-  line-height: 1em;
+  line-height: 1;
 }
 
 .icon-button-small-menu.center-button {
@@ -3922,6 +3931,7 @@ a.skip-main:active {
 .small-menu .menu ul {
   background: #ededed;
   margin: 0;
+  padding-left: 30px;
 }
 
 .small-menu .menu li {
@@ -3930,19 +3940,14 @@ a.skip-main:active {
 
 .small-menu .menu li a {
   display: block;
-  padding: 1.6rem;
-  line-height: 1;
+  padding: 1.6rem 30px;
   color: #f25e44;
   border-bottom: 1px solid #e9e9e9;
 }
 
-.small-menu .menu li li a {
-  padding-left: 50px;
-}
-
 .small-menu .menu li li.menu-item a:before {
   content: "\f105";
-  margin: 0 10px 0 -15px;
+  margin: 0 10px 0 -50px;
   font-weight: bold;
   color: #f25e44;
 }
@@ -4417,6 +4422,7 @@ a.skip-main:active {
     background-position: bottom;
     -webkit-background-size: contain;
        -moz-background-size: contain;
+         -o-background-size: contain;
             background-size: contain;
   }
   .featured-item .col-4 {
@@ -4430,6 +4436,7 @@ a.skip-main:active {
     background-image: url(img/ev-green.jpg);
     -webkit-background-size: 90% 100%;
        -moz-background-size: 90% 100%;
+         -o-background-size: 90% 100%;
             background-size: 90% 100%;
     background-repeat: no-repeat;
     min-height: 360px;
