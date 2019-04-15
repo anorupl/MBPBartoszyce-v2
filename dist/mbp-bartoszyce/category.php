@@ -1,35 +1,43 @@
 <?php
+
 /**
-* The template for displaying taxonomy.
+* The main template file
+*
+* @link https://developer.wordpress.org/themes/basics/template-hierarchy/
 *
 * @package MBP Bartoszyce
 * @since 0.1.0
+*
 */
-get_header(); ?>
+get_header();
+
+?>
 <div id="content" class="site-content clear-both">
-  <div class="header-content pad-all text-light text-center">
+  <div class="header-content pad-all text-light a-light a-hover-two text-center">
     <div class="class-h2 h--xxl" aria-hidden="true">
-      <?php the_archive_title(); ?>
+      <?php echo single_cat_title( '', false ); ?>
     </div>
-    <div id="breadcrumbs" class="a-light a-hover-two">
-      <span><?php _e('You are here: &nbsp;', 'wpg_theme'); ?></span>
-      <?php if (function_exists('wpg_breadcrumbs')) wpg_breadcrumbs(); ?>
+    <div id="breadcrumbs">
+      <span><?php _e('You are here: &nbsp;', 'wpg_theme'); ?></span><?php if (function_exists('wpg_breadcrumbs')) wpg_breadcrumbs(); ?>
     </div>
   </div><!-- .header-content -->
   <div class="container">
-    <div id="primary" class="content-area col-primary hentry-multi gutters">
-      <section>
-<?php
-$number_clubs = 3;
+    <section class="content-area">
+      <div id="primary" class="col-primary hentry-multi gutters">
+        <header class="screen-reader">
+          <h2><?php echo single_cat_title( '', false ); ?></h2>
+        </header>
+        <?php
+        /**
+        * Section with description for categories selected as clubs in customizer theme settings.
+        */
 
-if (!empty($number_clubs)) {
-  $id_terms = [];
-  for ( $i = 1; $i <= $number_clubs; $i++ ) {
+        for ( $i = 1; $i <= 3; $i++ ) {
+          $id_terms[] = get_theme_mod("wpg_club_terms_$i",'');
+        }
 
-    $id_terms[] = get_theme_mod("wpg_club_terms_$i",'');
-  }
-}
-if (is_category($id_terms) && $paged == 0) :
+        if (is_category($id_terms) && $paged == 0) :
+
           $term_object = get_queried_object();
           $description = get_term_field( 'description', $term_object->term_id, $term_object->taxonomy );
           ?>
@@ -46,17 +54,17 @@ if (is_category($id_terms) && $paged == 0) :
               <?php echo is_wp_error( $description ) ? '' : $description; ?>
             </div>
           </div><!-- term_description -->
-        <?php endif; ?>
+          <?php
+        endif;
+        ?>
         <main id="main" class="site-main ">
           <?php
-          if ( have_posts() ):
-
-            while ( have_posts() ):
-
+          if ( have_posts() ) :
+            /* Start the Loop */
+            while ( have_posts() ) :
               the_post();
 
               get_template_part( 'components/content_multi/content', get_post_format() );
-
             endwhile;
 
             // Previous/next page navigation.
@@ -65,13 +73,13 @@ if (is_category($id_terms) && $paged == 0) :
               'next_text'          => __( 'Next page', 'wpg_theme' ),
               'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'wpg_theme' ) . ' </span>',
             ));
+
           else:
             get_template_part( 'components/content_multi/content', 'none' );
-          endif;
-          ?>
+          endif; ?>
         </main><!-- .site-main -->
-      </section>
-    </div><!-- #primary -->
+      </div><!-- #primary -->
+    </section>
     <?php get_sidebar(); ?>
   </div><!-- .container -->
 </div><!-- #content -->

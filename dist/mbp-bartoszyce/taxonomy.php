@@ -19,7 +19,20 @@ get_header(); ?>
   <div class="container">
     <div id="primary" class="content-area col-primary hentry-multi gutters">
       <section>
-        <?php if (is_tax('clubs') && $paged == 0): $term_object = get_queried_object(); $description = get_term_field( 'description', $term_object->term_id, $term_object->taxonomy ); ?>
+<?php
+$number_clubs = 3;
+
+if (!empty($number_clubs)) {
+  $id_terms = [];
+  for ( $i = 1; $i <= $number_clubs; $i++ ) {
+
+    $id_terms[] = get_theme_mod("wpg_club_terms_$i",'');
+  }
+}
+if (is_category($id_terms) && $paged == 0) :
+          $term_object = get_queried_object();
+          $description = get_term_field( 'description', $term_object->term_id, $term_object->taxonomy );
+          ?>
           <div id="term_description">
             <div class="desc_header pad-all text-light a-light a-hover-one clear-both">
               <header class="col-9">
@@ -37,15 +50,15 @@ get_header(); ?>
         <main id="main" class="site-main ">
           <?php
           if ( have_posts() ):
-            
+
             while ( have_posts() ):
-              
+
               the_post();
-              
+
               get_template_part( 'components/content_multi/content', get_post_format() );
-              
+
             endwhile;
-            
+
             // Previous/next page navigation.
             the_posts_pagination( array(
               'prev_text'          => __( 'Previous page', 'wpg_theme' ),

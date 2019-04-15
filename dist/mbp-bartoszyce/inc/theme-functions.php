@@ -12,12 +12,12 @@
 * The Code below will modify the main WordPress loop, before the queries fired
 */
 function wpg_query_offset( $query) {
-	
+
 	// Before anything else
 	if (!is_admin()) {
-		
+
 		if ( $query->is_home() && $query->is_main_query() ) {
-			
+
 			//$query->set( 'ignore_sticky_posts', '-1' );
 			$query->set( 'post_type', array('post', 'clubnews') );
 			// First, define your desired offset...
@@ -26,11 +26,11 @@ function wpg_query_offset( $query) {
 			$ppp = get_option( 'posts_per_page' );
 			// get sticky posts array
 			$sticky_posts = get_option( 'sticky_posts' );
-			
+
 			if (!empty($sticky_posts)) {
 				$offset = 2;
 			}
-			
+
 			// Next, detect and handle pagination...
 			if ( $query->is_paged() ) {
 				// Manually determine page query offset (offset + current page (minus one) x posts per page)
@@ -41,13 +41,13 @@ function wpg_query_offset( $query) {
 			else {
 				$query->set( 'posts_per_page', $offset );
 			}
-			
-			
-			
-			
+
+
+
+
 		}
 		if ($query->is_category('aktualnosci')) {
-			
+
 			$query->set( 'post_type', array('post', 'clubnews') );
 			$query->set('tax_query', array(
 				'relation' => 'or',
@@ -62,7 +62,7 @@ function wpg_query_offset( $query) {
 					'terms' => 'aktualnosci'
 				)
 			));
-			
+
 		}
 	}
 }
@@ -72,10 +72,10 @@ add_action( 'pre_get_posts', 'wpg_query_offset', 1 );
 * The Code below will modify the number of found posts for the query.
 */
 function wpg_adjust_offset_pagination( $found_posts, $query ) {
-	
+
 	// Define our offset again...
 	$offset = -6;
-	
+
 	// Ensure we're modifying the right query object...
 	if ( $query->is_home() && $query->is_main_query() ) {
 		// Reduce WordPress's found_posts count by the offset...
@@ -96,9 +96,9 @@ add_filter( 'found_posts', 'wpg_adjust_offset_pagination', 1, 2 );
 * @param 	array $classes Classes for the body element.
 */
 function wpg_body_class($class) {
-	
+
 	$class[] = 'hfeed site';
-	
+
 	// Active sidebar - 2 column (content)
 	if (is_active_sidebar( 'wpg-sidebar-right' ) ) {
 		$class[] = 'active-sidebar';
@@ -113,7 +113,7 @@ add_filter( 'body_class', 'wpg_body_class' );
 * @param 	array $classes Classes for the post element.
 */
 function wpg_post_class($class) {
-	
+
 	return $class;
 }
 add_filter( 'post_class', 'wpg_post_class' );
@@ -147,9 +147,9 @@ add_filter( 'the_title', 'wpg_no_title' );
 * @return string
 */
 function wpg_rwd_video_container($html, $url='') {
-	
+
 	$wrapped = '<div class="fluid-width-video-wrapper">' . $html . '</div>';
-	
+
 	if ( empty( $url ) && 'video_embed_html' == current_filter() ) { // Jetpack
 		$html = $wrapped;
 	} elseif ( !empty( $url ) ) {
@@ -176,7 +176,7 @@ add_filter( 'video_embed_html', 'wpg_rwd_video_container' ); // Jetpack
 * @return string
 */
 function wpg_add_video_wmode_transparent($html, $url, $attr) {
-	
+
 	if ( strpos( $html, "<embed src=" ) !== false )
 	{ return str_replace('</param><embed', '</param><param name="wmode" value="opaque"></param><embed wmode="opaque" ', $html); }
 	elseif ( strpos ( $html, 'feature=oembed' ) !== false )
@@ -192,7 +192,7 @@ function wpg_nav_description( $item_output, $item, $depth, $args ) {
 	if ( !empty( $item->description ) ) {
 		$item_output = str_replace( $args->link_after . '</a>', '<span class="menu-item-description">' . $item->description . '</span>' . $args->link_after . '</a>', $item_output );
 	}
-	
+
 	return $item_output;
 }
 add_filter( 'walker_nav_menu_start_el', 'wpg_nav_description', 10, 4 );
@@ -205,7 +205,7 @@ add_filter( 'walker_nav_menu_start_el', 'wpg_nav_description', 10, 4 );
 */
 function wpg_add_linked_images_class($html, $id, $caption, $title, $align, $url, $size, $alt = '' ){
 	$classes = 'image-popup'; // separated by spaces, e.g. 'img image-link'
-	
+
 	// check if there are already classes assigned to the anchor
 	if ( preg_match('/<a.*? class=".*?">/', $html) ) {
 		$html = preg_replace('/(<a.*? class=".*?)(".*?>)/', '$1 ' . $classes . '$2', $html);
@@ -227,13 +227,13 @@ add_filter('image_send_to_editor','wpg_add_linked_images_class',10,8);
 * @param string $taxonomy The taxonomy that the tag belongs to
 */
 function render_field_edit($term, $taxonomy){
-	
+
 	$settings = array(
 		'textarea_name' => 'description',
 		'textarea_rows' => 10,
 		'editor_class'  => 'i18n-multilingual',
 	);
-	
+
 	?>
 	<tr class="form-field term-description-wrap">
 		<th scope="row"><label for="description"><?php _e( 'Description' ); ?></label></th>
@@ -248,7 +248,8 @@ function render_field_edit($term, $taxonomy){
 	</tr>
 	<?php
 }
-add_action('clubs_edit_form_fields', 'render_field_edit', 10, 2);
+add_action('category_edit_form_fields', 'render_field_edit', 10, 2);
+add_action('clubs_edit_form_fields', 'render_field_add', 10, 2);
 
 /**
 * Add the visual editor to the add new tag screen
@@ -285,7 +286,8 @@ function render_field_add( $taxonomy ) {
 	</div>
 	<?php
 }
-add_action('clubs_add_form_fields', 'render_field_add', 10, 2);
+add_action('category_add_form_fields', 'render_field_add', 10, 2);
+
 
 /**
 * get event image as regular WordPress thumbnail
@@ -303,7 +305,7 @@ function wpg_filterEventThumbnail($result, $EM_Event, $placeholder) {
 			$result = wp_get_attachment_image($imageID, 'thumbnail');
 		}
 	}
-	
+
 	return $result;
 }
 add_filter('em_event_output_placeholder', 'wpg_filterEventThumbnail', 10, 3);
@@ -318,15 +320,15 @@ add_filter('em_event_output_placeholder', 'wpg_filterEventThumbnail', 10, 3);
 * @return array $args Updated menu args.
 */
 function wpg_widget_nav_menu($nav_menu_args, $nav_menu, $args) {
-	
+
 	$nav_menu_args = array(
-		
+
 		'container'       => 'nav',
 		'container_class' => 'v-nav dropdown',
 		'menu'            => $nav_menu,
 		'fallback_cb'     => ''
 	);
-	
+
 	return $nav_menu_args;
 }
 add_filter( 'widget_nav_menu_args', 'wpg_widget_nav_menu', 10, 3 );

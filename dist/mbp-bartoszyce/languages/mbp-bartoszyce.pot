@@ -35,6 +35,22 @@ msgstr ""
 msgid "Click to download"
 msgstr ""
 
+#: src/category.php:41, src/index.php:141, src/single-event.php:31, src/single.php:31, src/taxonomy.php:29
+msgid "You are here: &nbsp;"
+msgstr ""
+
+#: src/category.php:143, src/index.php:211, src/search.php:77, src/taxonomy.php:127
+msgid "Previous page"
+msgstr ""
+
+#: src/category.php:145, src/index.php:213, src/search.php:79, src/taxonomy.php:129
+msgid "Next page"
+msgstr ""
+
+#: src/category.php:147, src/components/content_single/content-club.php:65, src/components/content_single/content-collection.php:65, src/components/content_single/content-event.php:49, src/components/content_single/content.php:65, src/index.php:215, src/page.php:91, src/search.php:81, src/taxonomy.php:131
+msgid "Page"
+msgstr ""
+
 #: src/comments.php:53
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
@@ -64,10 +80,6 @@ msgstr ""
 
 #: src/components/content_single/content-club.php:57, src/components/content_single/content-collection.php:57, src/components/content_single/content-event.php:41, src/components/content_single/content.php:57, src/page.php:83
 msgid "Pages:"
-msgstr ""
-
-#: src/components/content_single/content-club.php:65, src/components/content_single/content-collection.php:65, src/components/content_single/content-event.php:49, src/components/content_single/content.php:65, src/index.php:227, src/page.php:91, src/search.php:81, src/taxonomy.php:105
-msgid "Page"
 msgstr ""
 
 #: src/components/content_single/content-collection.php:85, src/components/content_single/content-event.php:69
@@ -254,7 +266,7 @@ msgstr ""
 msgid "Select Category"
 msgstr ""
 
-#: src/inc/customizer/setting_control/inc_setting_blog.php:25, src/inc/customizer/wpg_customizer.php:425, src/inc/template-tags.php:1031, src/index.php:117, src/index.php:169
+#: src/inc/customizer/setting_control/inc_setting_blog.php:25, src/inc/customizer/wpg_customizer.php:425, src/inc/template-tags.php:1031, src/index.php:117, src/index.php:163
 msgid "Last post"
 msgstr ""
 
@@ -530,20 +542,8 @@ msgstr ""
 msgid "Increase font size 200%"
 msgstr ""
 
-#: src/index.php:123, src/index.php:175
+#: src/index.php:123, src/index.php:169
 msgid " - page: "
-msgstr ""
-
-#: src/index.php:147, src/single-event.php:31, src/single.php:31, src/taxonomy.php:29
-msgid "You are here: &nbsp;"
-msgstr ""
-
-#: src/index.php:223, src/search.php:77, src/taxonomy.php:101
-msgid "Previous page"
-msgstr ""
-
-#: src/index.php:225, src/search.php:79, src/taxonomy.php:103
-msgid "Next page"
 msgstr ""
 
 #: src/page-templates/page_iframe_audiobook.php:43, src/page-templates/page_iframe_book.php:43, src/page-templates/page_iframe_regio.php:43

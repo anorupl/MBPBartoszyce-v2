@@ -60,7 +60,7 @@ $wp_customize->add_control( 'wpg_clubs_desc', array(
 //=====================================
 
 // Terms for clubs
-$clubs_list 	= get_all_terms(false, true, array('clubs' => __('Category','wpg_theme')));
+$clubs_list 	= get_all_terms(false, true, array('category' => __('Category','wpg_theme')));
 
 for ( $i = 1; $i <= 3; $i++ ) {
 
@@ -108,6 +108,6 @@ for ( $i = 1; $i <= 3; $i++ ) {
 		'label' => __('Select Category', 'wpg_theme') . ' #' . $i,
 		'description' => __('Select category to show in Section.', 'wpg_theme'),
 		'section' => $club_section_id,
-		'choices' => $clubs_list['clubs'],
+		'choices' => $clubs_list['category'],
 	));
 }
