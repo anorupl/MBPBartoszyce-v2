@@ -792,10 +792,12 @@ code {
   list-style: none;
   padding: 0;
   margin: 0 0 1.5em;
+  clear: both;
 }
 
 .gallery {
   margin-bottom: 1.5em;
+  clear: both;
 }
 
 .gallery-grid ul {
@@ -2366,7 +2368,7 @@ main {
   width: 100%;
   background-color: #fbfafc;
   border-bottom: 1px solid #e9e9e9;
-  z-index: 700;
+  z-index: 1100;
 }
 
 #site-header {
@@ -2430,6 +2432,7 @@ main {
   background-image: url(img/svg/trianglify.svg);
   -webkit-background-size: cover;
      -moz-background-size: cover;
+       -o-background-size: cover;
           background-size: cover;
 }
 
@@ -2549,6 +2552,7 @@ main {
   background: center no-repeat;
   -webkit-background-size: cover;
      -moz-background-size: cover;
+       -o-background-size: cover;
           background-size: cover;
   background-color: #543d4f;
 }
@@ -2602,6 +2606,7 @@ main {
   background-position: center;
   -webkit-background-size: cover;
      -moz-background-size: cover;
+       -o-background-size: cover;
           background-size: cover;
   margin-bottom: 5px;
 }
@@ -2659,6 +2664,7 @@ main {
   background-position: center;
   -webkit-background-size: cover;
      -moz-background-size: cover;
+       -o-background-size: cover;
           background-size: cover;
   border: 5px solid #ffffff;
   margin: 10px;
@@ -4140,33 +4146,6 @@ a.skip-main:active {
   .hide-desktop {
     display: none;
   }
-  /*----------------------------------
- *  Gallery RWD -- phone
- * ---------------------------------*/
-  .gallery-columns-2 .gallery-item {
-    width: 45.83333%;
-  }
-  .gallery-columns-3 .gallery-item {
-    width: 29.16667%;
-  }
-  .gallery-columns-4 .gallery-item {
-    width: 20.83333%;
-  }
-  .gallery-columns-5 .gallery-item {
-    width: 15.83333%;
-  }
-  .gallery-columns-6 .gallery-item {
-    width: 12.5%;
-  }
-  .gallery-columns-7 .gallery-item {
-    width: 10.11905%;
-  }
-  .gallery-columns-8 .gallery-item {
-    width: 8.33333%;
-  }
-  .gallery-columns-9 .gallery-item {
-    width: 6.94444%;
-  }
   /* Gird 12 column
 ========================================================================== */
   .container {
@@ -4418,6 +4397,7 @@ a.skip-main:active {
     background-position: bottom;
     -webkit-background-size: contain;
        -moz-background-size: contain;
+         -o-background-size: contain;
             background-size: contain;
   }
   .featured-item .col-4 {
@@ -4431,6 +4411,7 @@ a.skip-main:active {
     background-image: url(img/ev-green.jpg);
     -webkit-background-size: 90% 100%;
        -moz-background-size: 90% 100%;
+         -o-background-size: 90% 100%;
             background-size: 90% 100%;
     background-repeat: no-repeat;
     min-height: 360px;

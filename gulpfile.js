@@ -114,7 +114,7 @@ gulp.task('theme-js', function() {
 	.pipe(gulp.dest(project_dir + dist_assets_js));
 	
 	//Copy Js for gallery and images
-	gulp.src([imagePopup,imgload,masonry])
+	gulp.src([imgload, masonry, imagePopup])
 	.pipe(changed(project_dir + dist_assets_js))
 	.pipe(concat('wpg-image.js'))
 	.pipe(uglify()).pipe(rename({suffix: '.min'}))

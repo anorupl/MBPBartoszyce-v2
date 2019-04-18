@@ -39,4 +39,4 @@ get_header(); ?>
     </div><!-- .container -->
   <?php endwhile; ?>
 </div><!-- #content -->
-<?php get_footer('wfidkar'); ?>
+<?php get_footer(); ?>

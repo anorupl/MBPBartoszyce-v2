@@ -127,7 +127,7 @@ msgid "E-mail"
 msgstr ""
 
 #: src/components/features/section-contact.php:145
-msgid "Show contact details for departments"
+msgid "Show e-mails for departments"
 msgstr ""
 
 #: src/components/features/section-contact.php:161, src/inc/customizer/setting_control/inc_setting_contact.php:133
@@ -154,7 +154,7 @@ msgstr ""
 msgid "Show"
 msgstr ""
 
-#: src/components/features/section-new.php:153
+#: src/components/features/section-new.php:149
 msgid "Show previous news"
 msgstr ""
 
@@ -166,16 +166,16 @@ msgstr ""
 msgid "Show more news"
 msgstr ""
 
-#: src/footer-fidkar.php:53, src/footer-wfidkar.php:53, src/footer.php:69
-msgid "All Rights Reserved"
-msgstr ""
-
-#: src/footer.php:59
+#: src/footer-fidkar.php:59, src/footer-wfidkar.php:59, src/footer.php:59
 msgid "Our site uses cookies of its own to properly display the page. Third-party cookies may also be locally used on the site. You can disable the use of cookies in your web browser, however, this may make it impossible to use the website! "
 msgstr ""
 
-#: src/footer.php:61
+#: src/footer-fidkar.php:61, src/footer-wfidkar.php:61, src/footer.php:61
 msgid "More information in our Privacy Policy regarding cookies."
+msgstr ""
+
+#: src/footer-fidkar.php:69, src/footer-wfidkar.php:69, src/footer.php:69
+msgid "All Rights Reserved"
 msgstr ""
 
 #: src/functions.php:163
@@ -526,7 +526,7 @@ msgstr ""
 msgid "page: "
 msgstr ""
 
-#: src/inc/theme-functions.php:275
+#: src/inc/theme-functions.php:229
 msgid "Untitled"
 msgstr ""
 

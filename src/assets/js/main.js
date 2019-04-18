@@ -152,6 +152,9 @@
       }
     });
     
+    
+    
+    
     // Single image
     $('.wp-block-image a[href*=".jpg"]').magnificPopup({
       type:'image',
@@ -168,32 +171,33 @@
       });
     });
     
-    /**
-    * Masonry Gird
-    */
-    var $container = $('.wp-block-gallery');
-    
-    $container.imagesLoaded( function(){
+    var elem = document.body.classList;
+    if (elem.contains("single") == true) {
+      /**
+      * Masonry Gird
+      */
+      var $container_block = $('.wp-block-gallery'),
+      $container_classic = $('.gallery');
       
-      $("body").removeClass("preload");
-      $container.masonry({
-        itemSelector : '.blocks-gallery-item',
-        columnWidth: '.blocks-gallery-item',
-        percentPosition: true
+      $container_block.imagesLoaded( function(){
+        $("body").removeClass("preload");
+        $container_block.masonry({
+          itemSelector : '.blocks-gallery-item',
+          columnWidth: '.blocks-gallery-item',
+          percentPosition: true
+        });
       });
-    });
-    
-    var $container_2 = $('.gallery');
-    
-    $container_2.imagesLoaded( function(){
       
-      $("body").removeClass("preload");
-      $container_2.masonry({
-        itemSelector : '.gallery-item',
-        columnWidth: '.gallery-item',
-        percentPosition: true
+      $container_classic.imagesLoaded( function(){
+        
+        $("body").removeClass("preload");
+        $container_classic.masonry({
+          itemSelector : '.gallery-item',
+          columnWidth: '.gallery-item',
+          percentPosition: true
+        });
       });
-    });    
+    }
     
     
     /**

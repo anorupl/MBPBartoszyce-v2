@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: wpg-bezcieniowapl\n"
 "Report-Msgid-Bugs-To: http://biblioteka.bartoszyce.pl\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2019-03-28 14:08+0100\n"
+"PO-Revision-Date: 2019-04-18 22:27+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pl_PL\n"
@@ -19,7 +19,7 @@ msgstr ""
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
@@ -43,6 +43,29 @@ msgstr "Rozmiar pliku: "
 #: src/attachment.php:87
 msgid "Click to download"
 msgstr "Kliknij, aby pobrać"
+
+#: src/category.php:41, src/index.php:141, src/single-event.php:31,
+#: src/single.php:31, src/taxonomy.php:29
+msgid "You are here: &nbsp;"
+msgstr "Jesteś tutaj: &nbsp;"
+
+#: src/category.php:143, src/index.php:211, src/search.php:77,
+#: src/taxonomy.php:127
+msgid "Previous page"
+msgstr "Poprzednia strona"
+
+#: src/category.php:145, src/index.php:213, src/search.php:79,
+#: src/taxonomy.php:129
+msgid "Next page"
+msgstr "Następna strona"
+
+#: src/category.php:147, src/components/content_single/content-club.php:65,
+#: src/components/content_single/content-collection.php:65,
+#: src/components/content_single/content-event.php:49,
+#: src/components/content_single/content.php:65, src/index.php:215,
+#: src/page.php:91, src/search.php:81, src/taxonomy.php:131
+msgid "Page"
+msgstr "Strona"
 
 #: src/comments.php:53
 msgctxt "comments title"
@@ -86,39 +109,23 @@ msgstr "Czytaj dalej<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgid "Pages:"
 msgstr "Strony:"
 
-#: src/components/content_single/content-club.php:65,
-#: src/components/content_single/content-collection.php:65,
-#: src/components/content_single/content-event.php:49,
-#: src/components/content_single/content.php:65, src/index.php:227,
-#: src/page.php:91, src/search.php:81, src/taxonomy.php:105
-msgid "Page"
-msgstr "Strona"
-
-#: src/components/content_single/content-club.php:83,
 #: src/components/content_single/content-collection.php:85,
-#: src/components/content_single/content-event.php:69,
-#: src/components/content_single/content.php:85
+#: src/components/content_single/content-event.php:69
 msgid "Next"
 msgstr "Następny"
 
-#: src/components/content_single/content-club.php:85,
 #: src/components/content_single/content-collection.php:87,
-#: src/components/content_single/content-event.php:71,
-#: src/components/content_single/content.php:87
+#: src/components/content_single/content-event.php:71
 msgid "Next post:"
 msgstr "Następny wpis:"
 
-#: src/components/content_single/content-club.php:89,
 #: src/components/content_single/content-collection.php:91,
-#: src/components/content_single/content-event.php:75,
-#: src/components/content_single/content.php:91
+#: src/components/content_single/content-event.php:75
 msgid "Previous"
 msgstr "Poprzedni"
 
-#: src/components/content_single/content-club.php:91,
 #: src/components/content_single/content-collection.php:93,
-#: src/components/content_single/content-event.php:77,
-#: src/components/content_single/content.php:93
+#: src/components/content_single/content-event.php:77
 msgid "Previous post:"
 msgstr "Poprzedni wpis:"
 
@@ -156,9 +163,9 @@ msgstr "Adres"
 msgid "E-mail"
 msgstr "E-mail"
 
-#: src/components/features/section-contact.php:141
-msgid "Show contact details for departments"
-msgstr "Pokaż dane kontaktowe do działów biblioteki"
+#: src/components/features/section-contact.php:145
+msgid "Show e-mails for departments"
+msgstr "Pokaż adresy e-mail do działów biblioteki"
 
 #: src/components/features/section-contact.php:161,
 #: src/inc/customizer/setting_control/inc_setting_contact.php:133
@@ -189,7 +196,7 @@ msgstr "Nowość w bibliotece"
 msgid "Show"
 msgstr "Pokaż"
 
-#: src/components/features/section-new.php:153
+#: src/components/features/section-new.php:149
 msgid "Show previous news"
 msgstr "Pokaż poprzednie nowości"
 
@@ -203,11 +210,7 @@ msgstr "Partnerzy"
 msgid "Show more news"
 msgstr "Pokaż więcej aktualności"
 
-#: src/footer-fidkar.php:53, src/footer-wfidkar.php:53, src/footer.php:69
-msgid "All Rights Reserved"
-msgstr "Wszelkie Prawa Zastrzeżone"
-
-#: src/footer.php:59
+#: src/footer-fidkar.php:59, src/footer-wfidkar.php:59, src/footer.php:59
 msgid ""
 "Our site uses cookies of its own to properly display the page. Third-party "
 "cookies may also be locally used on the site. You can disable the use of "
@@ -219,10 +222,14 @@ msgstr ""
 "podmiotów trzecich. Możesz wyłączyć używanie plików cookies w przeglądarce "
 "internetowej jednak może to uniemożliwić korzystanie ze strony! "
 
-#: src/footer.php:61
+#: src/footer-fidkar.php:61, src/footer-wfidkar.php:61, src/footer.php:61
 msgid "More information in our Privacy Policy regarding cookies."
 msgstr ""
 "Więcej informacji w naszej Polityce Prywatności dotyczącej plików cookies."
+
+#: src/footer-fidkar.php:69, src/footer-wfidkar.php:69, src/footer.php:69
+msgid "All Rights Reserved"
+msgstr "Wszelkie Prawa Zastrzeżone"
 
 #: src/functions.php:163
 msgid "Header Menu - Top"
@@ -328,8 +335,8 @@ msgid "Select Category"
 msgstr "Wybierz kategorię"
 
 #: src/inc/customizer/setting_control/inc_setting_blog.php:25,
-#: src/inc/customizer/wpg_customizer.php:425, src/inc/template-tags.php:1017,
-#: src/index.php:117, src/index.php:169
+#: src/inc/customizer/wpg_customizer.php:425, src/inc/template-tags.php:1031,
+#: src/index.php:117, src/index.php:163
 msgid "Last post"
 msgstr "Ostanie wpisy"
 
@@ -581,44 +588,44 @@ msgstr "Starsze Komentarze"
 msgid "Newer Comments"
 msgstr "Nowesze Komentarze"
 
-#: src/inc/template-tags.php:1015
+#: src/inc/template-tags.php:1029
 msgid "Home"
 msgstr "Strona Główna"
 
-#: src/inc/template-tags.php:1019
+#: src/inc/template-tags.php:1033
 msgid "<span class=\"screen-reader-text\">Archive by Category</span> %s"
 msgstr "<span class=\"screen-reader-text\">Kategoria</span> %s"
 
-#: src/inc/template-tags.php:1021
+#: src/inc/template-tags.php:1035
 msgid "<span class=\"screen-reader-text\">Search Results for</span> %s"
 msgstr "<span class=\"screen-reader-text\">Wynik wyszukiwania dla:</span> %s"
 
-#: src/inc/template-tags.php:1023
+#: src/inc/template-tags.php:1037
 msgid "<span class=\"screen-reader-text\">Posts Tagged</span> %s"
 msgstr "<span class=\"screen-reader-text\">Tag</span> %s"
 
-#: src/inc/template-tags.php:1025
+#: src/inc/template-tags.php:1039
 msgid "<span class=\"screen-reader-text\">Articles Posted by</span> %s"
 msgstr ""
 "<span class=\"screen-reader-text\">Artykuł opublikowany przez</span> %s"
 
-#: src/inc/template-tags.php:1027
+#: src/inc/template-tags.php:1041
 msgid "<span class=\"screen-reader-text\">Error 404</span>"
 msgstr "<span class=\"screen-reader-text\">Błąd 404</span>"
 
-#: src/inc/template-tags.php:1029
+#: src/inc/template-tags.php:1043
 msgid "<span class=\"screen-reader-text\">Page</span> %s"
 msgstr "<span class=\"screen-reader-text\">Strona</span> %s"
 
-#: src/inc/template-tags.php:1031
+#: src/inc/template-tags.php:1045
 msgid "<span class=\"screen-reader-text\">Comment Pag</span>e %s"
 msgstr "<span class=\"screen-reader-text\">Strona komentarza</span>e %s"
 
-#: src/inc/template-tags.php:1099
+#: src/inc/template-tags.php:1113
 msgid "page: "
 msgstr "strona: "
 
-#: src/inc/theme-functions.php:207
+#: src/inc/theme-functions.php:229
 msgid "Untitled"
 msgstr "Brak tytułu"
 
@@ -634,22 +641,9 @@ msgstr "Zwiększ rozmiar czcionki 150%"
 msgid "Increase font size 200%"
 msgstr "Zwiększ rozmiar czcionki 200%"
 
-#: src/index.php:123, src/index.php:175
+#: src/index.php:123, src/index.php:169
 msgid " - page: "
 msgstr " - strona: "
-
-#: src/index.php:147, src/single-event.php:31, src/single.php:31,
-#: src/taxonomy.php:29
-msgid "You are here: &nbsp;"
-msgstr "Jesteś tutaj: &nbsp;"
-
-#: src/index.php:223, src/search.php:77, src/taxonomy.php:101
-msgid "Previous page"
-msgstr "Poprzednia strona"
-
-#: src/index.php:225, src/search.php:79, src/taxonomy.php:103
-msgid "Next page"
-msgstr "Następna strona"
 
 #: src/page-templates/page_iframe_audiobook.php:43,
 #: src/page-templates/page_iframe_book.php:43,

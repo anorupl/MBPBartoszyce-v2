@@ -31,9 +31,9 @@
             <ul class="js-tablist">
               <?php for ($i=1; $i <= 4; $i++) : ?>
                 <li class="js-tablist__item" >
-
+                  
                   <?php $place_name = esc_html(get_theme_mod("wpg_contact_place_$i",__('Tab ', 'wpg_theme'))); ?>
-
+                  
                   <a href="#id_contact_tab_<?php echo $i; ?>" data-pt_position="<?php echo get_theme_mod("wpg_contact_map_latlong_$i", '0, 0'); ?>" data-pt_name="<?php echo $place_name; ?>" id="label_id_contact_tab_<?php echo $i; ?>" class="js-tablist__link"><?php echo $place_name; ?></a>
                 </li>
               <?php endfor; ?>
@@ -66,12 +66,12 @@
                       </div>
                       <?php
                       if( $i == 1){
-
-                          $id = get_theme_mod("wpg_contact_page_$i",'');
-
-                          if (!empty($id)) {
-                            printf('<div class="contact-item__text"><a class="btn--border border--light text-center" href="%1$s">%2$s</a></div>', get_permalink($id), __('Show contact details for departments','wpg_theme'));
-                          }
+                        
+                        $id = get_theme_mod("wpg_contact_page_$i",'');
+                        
+                        if (!empty($id)) {
+                          printf('<div class="contact-item__text"><a class="btn--border border--light text-center" href="%1$s">%2$s</a></div>', get_permalink($id), __('Show e-mails for departments','wpg_theme'));
+                        }
                       }
                       ?>
                     </div>
@@ -98,11 +98,11 @@
                         <tbody>
                           <?php
                           $open_hours = get_theme_mod("wpg_contact_open_$i", '');
-
+                          
                           if ($open_hours !== '') :
-
+                            
                             $open_hours = json_decode(base64_decode($open_hours));
-
+                            
                             foreach ($open_hours as $key => $value) :
                               ?>
                               <tr>
@@ -133,3 +133,4 @@
       </div>
     </div>
   </div>
+  
