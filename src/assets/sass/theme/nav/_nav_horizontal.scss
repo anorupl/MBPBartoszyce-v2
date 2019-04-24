@@ -105,10 +105,11 @@
   
   .menu-item-description {
     display: block;
+    margin-top: 10px;
     clear: both;
     text-transform: initial;
-    font-size: 88%;
+    font-size: 90%;
+    font-family: sans-serif;
     color: $five-bw;
-    margin-top: 10px;
   }
 }

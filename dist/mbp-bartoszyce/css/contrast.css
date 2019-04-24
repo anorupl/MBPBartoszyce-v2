@@ -47,23 +47,23 @@
 1.0 Normalize
 2.0 Universal styles
 3.0 Layout
-  3.1 Header
-  3.2  Regular Content
-  3.3  Posts - multi loop
-  3.4  Posts & Page
-  3.5  Taxonomy
-  3.6  Attachment
+3.1 Header
+3.2  Regular Content
+3.3  Posts - multi loop
+3.4  Posts & Page
+3.5  Taxonomy
+3.6  Attachment
 4 Sections
-  4.1 Loop in header with post
-  4.2 Featured category
-  4.3 Events
-  4.4 Clubs
-  4.5 New colections
-  4.6 Catl
-  4.7 Contact
-  4.8 Contact & Catl
-  4.9 Partners (slick slider css)
-  4.10 Copyright
+4.1 Loop in header with post
+4.2 Featured category
+4.3 Events
+4.4 Clubs
+4.5 New colections
+4.6 Catl
+4.7 Contact
+4.8 Contact & Catl
+4.9 Partners (slick slider css)
+4.10 Copyright
 5.0  Widgets
 6.0  Event calander - plugin Events Manager by Marcus Sykes
 --------------------------------------------------------------*/
@@ -306,8 +306,8 @@ pre {
     text-decoration: underline; }
 
 /*--------------------------------------------------------------
-3.1 Header
---------------------------------------------------------------*/
+  3.1 Header
+  --------------------------------------------------------------*/
 #top-bar {
   border-bottom: 1px solid #ffffff; }
 
@@ -320,8 +320,8 @@ pre {
   border-color: #FFFE00; }
 
 /*--------------------------------------------------------------
-3.2  Regular Content
---------------------------------------------------------------*/
+  3.2  Regular Content
+  --------------------------------------------------------------*/
 .header-content {
   color: #000000;
   background-color: #ffffff;
@@ -334,21 +334,21 @@ pre {
     color: #FFFE00; }
 
 /*--------------------------------------------------------------
-3.3  Posts - multi loop
---------------------------------------------------------------*/
+  3.3  Posts - multi loop
+  --------------------------------------------------------------*/
 .hentry-multi .hentry {
   background-color: #000000;
   border-color: #ffffff; }
 
 /*--------------------------------------------------------------
-3.4  Posts & Page
---------------------------------------------------------------*/
+  3.4  Posts & Page
+  --------------------------------------------------------------*/
 .entry-meta {
   border-color: #ffffff; }
 
 /*--------------------------------------------------------------
-3.5  Taxonomy
---------------------------------------------------------------*/
+  3.5  Taxonomy
+  --------------------------------------------------------------*/
 #term_description {
   border-bottom-color: #ffffff; }
 
@@ -356,8 +356,8 @@ pre {
   background-color: #000000; }
 
 /*--------------------------------------------------------------
-3.6  Attachment
---------------------------------------------------------------*/
+  3.6  Attachment
+  --------------------------------------------------------------*/
 .attachment--other {
   background: #000000;
   border-color: #ffffff; }
@@ -367,8 +367,8 @@ pre {
   border-bottom-color: #ffffff; }
 
 /*--------------------------------------------------------------
-4.1 Loop in header with post
---------------------------------------------------------------*/
+  4.1 Loop in header with post
+  --------------------------------------------------------------*/
 .f-post,
 .f-post-content,
 #posts-min article,
@@ -381,6 +381,7 @@ a.arrow-allpost-icon {
   background-color: #FFFE00;
   border-color: #FFFE00; }
   a.arrow-allpost-icon:hover {
+    color: #FFFE00;
     background-color: #000000;
     border-color: #FFFE00; }
 
@@ -388,8 +389,8 @@ a.arrow-allpost-icon {
   border: 5px solid #ffffff; }
 
 /*--------------------------------------------------------------
-4.2 Featured category
---------------------------------------------------------------*/
+  4.2 Featured category
+  --------------------------------------------------------------*/
 #featured-cat h3 {
   background-color: #000000; }
 
@@ -403,8 +404,8 @@ a.arrow-allpost-icon {
   color: #000000; }
 
 /*--------------------------------------------------------------
-4.3 Events
---------------------------------------------------------------*/
+  4.3 Events
+  --------------------------------------------------------------*/
 #wpg-evets .header-section {
   color: #ffffff; }
 
@@ -424,19 +425,22 @@ a.arrow-allpost-icon {
 /* calander in section */
 #calendar_events {
   background-color: #000000;
-  border: 5px solid #ffffff; }
+  border: 5px solid #FFFE00; }
 
 .em-calendar thead {
   background-color: #000000; }
   .em-calendar thead a {
     color: #FFFE00; }
 
+.em-calendar tbody {
+  background-color: #000000; }
+
 tr.days-names {
   color: #fbfafc; }
 
 /*--------------------------------------------------------------
-4.4 Clubs
---------------------------------------------------------------*/
+  4.4 Clubs
+  --------------------------------------------------------------*/
 .clubs {
   background-color: #000000; }
   .clubs::after {
@@ -447,8 +451,8 @@ tr.days-names {
   border: 1px solid #ffffff; }
 
 /*--------------------------------------------------------------
-4.5  New colections
---------------------------------------------------------------*/
+  4.5  New colections
+  --------------------------------------------------------------*/
 .newitems .tabs__item {
   border-bottom: 1px solid #ffffff; }
   .newitems .tabs__item a[aria-selected=true] {
@@ -464,8 +468,8 @@ tr.days-names {
   background-color: #000000; }
 
 /*--------------------------------------------------------------
-4.6  Catl
---------------------------------------------------------------*/
+  4.6  Catl
+  --------------------------------------------------------------*/
 #catl {
   background-color: #000000; }
   #catl .tabs__item a {
@@ -485,8 +489,8 @@ tr.days-names {
       background-color: #000000; }
 
 /*--------------------------------------------------------------
-4.7  Contact
---------------------------------------------------------------*/
+  4.7  Contact
+  --------------------------------------------------------------*/
 #contact .header-section h2 {
   background-color: #000000; }
 
@@ -518,14 +522,14 @@ tr.days-names {
   display: none; }
 
 /*--------------------------------------------------------------
-4.9  Partners (slick slider css)
---------------------------------------------------------------*/
+  4.9  Partners (slick slider css)
+  --------------------------------------------------------------*/
 #partners {
   background-color: #000000; }
 
 /*--------------------------------------------------------------
-5.0  Widgets
---------------------------------------------------------------*/
+  5.0  Widgets
+  --------------------------------------------------------------*/
 .widget {
   background-color: #000000; }
 
@@ -533,8 +537,8 @@ tr.days-names {
   background-color: #d5d4d9; }
 
 /*--------------------------------------------------------------
-6.0  Event calander - plugin Events Manager by Marcus Sykes
---------------------------------------------------------------*/
+  6.0  Event calander - plugin Events Manager by Marcus Sykes
+  --------------------------------------------------------------*/
 table.em-calendar td.eventless-today,
 table.em-calendar td.eventful-today {
   background-color: #ffffff;
@@ -558,7 +562,7 @@ table.em-calendar td.eventful-today a {
   border-bottom-color: #ffffff; }
 
 /* Forms
-========================================================================== */
+  ========================================================================== */
 fieldset,
 legend {
   border-color: #ffffff; }

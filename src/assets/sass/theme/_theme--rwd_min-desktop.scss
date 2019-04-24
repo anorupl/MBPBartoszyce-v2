@@ -162,17 +162,24 @@
 
 .f-post::before,
 #posts-min article::before {
-    content: '';
-    position: absolute;
-    left:0;
-    top:0;
-    width: 100%;
-    height: 100%;
-    background-color: $one-color;
-    opacity: 0.5;
+  content: '';
+  position: absolute;
+  left:0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  background-color: $one-color;
+  opacity: 0.4;
+  transition: opacity 0.8s;
 }
 .tag-bezkoloru.f-post::before {
   background-color: transparent;
+  opacity: 0;
+}
+
+.f-post:hover.f-post::before,
+#posts-min .hentry:hover.hentry::before  {
+  opacity: 0;
 }
 
 .arrow-allpost-icon {
@@ -273,7 +280,7 @@
   }
 }
 .coletion-gallery .gallery {
-    margin-right: -40px;
+  margin-right: -40px;
 }
 .coletion-gallery__gallery {
   display: flex;
@@ -316,7 +323,7 @@
     justify-content: space-between;
     border-bottom: 2px solid $four-bw;
   }
-
+  
   .header-section::before {
     content: '';
     display: block;
@@ -332,7 +339,7 @@
 
 
 #contact__map {
-
+  
   &::before {
     content: '';
     display: block;
@@ -345,7 +352,7 @@
     z-index: 500;
     transform: rotate(45deg);
   }
-
+  
 }
 /*--------------------------------------------------------------
 4.9  Partners (slick slider css)

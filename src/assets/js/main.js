@@ -98,7 +98,7 @@
       pauseOnHover: false,
       responsive: [
         {
-          breakpoint: 480,
+          breakpoint: 500,
           settings: {
             centerPadding: '40px',
             slidesToShow: 1
