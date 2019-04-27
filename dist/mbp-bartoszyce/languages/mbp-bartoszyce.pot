@@ -166,15 +166,15 @@ msgstr ""
 msgid "Show more news"
 msgstr ""
 
-#: src/footer-fidkar.php:59, src/footer-wfidkar.php:59, src/footer.php:59
+#: src/footer-fidkar.php:67, src/footer-wfidkar.php:67, src/footer.php:67
 msgid "Our site uses cookies of its own to properly display the page. Third-party cookies may also be locally used on the site. You can disable the use of cookies in your web browser, however, this may make it impossible to use the website! "
 msgstr ""
 
-#: src/footer-fidkar.php:61, src/footer-wfidkar.php:61, src/footer.php:61
+#: src/footer-fidkar.php:69, src/footer-wfidkar.php:69, src/footer.php:69
 msgid "More information in our Privacy Policy regarding cookies."
 msgstr ""
 
-#: src/footer-fidkar.php:69, src/footer-wfidkar.php:69, src/footer.php:69
+#: src/footer-fidkar.php:77, src/footer-wfidkar.php:77, src/footer.php:77
 msgid "All Rights Reserved"
 msgstr ""
 
