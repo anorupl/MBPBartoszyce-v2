@@ -181,7 +181,7 @@ main {
 .col-secondary {
   float: left;
   @include span(12 no-gutters);
-  margin: 5% 0 0;
+  margin-top: 5%;
 }
 .col-primary--12{
   @include span(12 no-gutters);

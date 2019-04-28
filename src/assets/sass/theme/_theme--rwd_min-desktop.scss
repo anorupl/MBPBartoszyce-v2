@@ -55,7 +55,8 @@
 }
 .active-sidebar {
   .col-primary{
-    @include span(9 no-gutters);
+    @include span(8.5 no-gutters);
+    
   }
   .col-secondary{
     @include span(3 no-gutters);

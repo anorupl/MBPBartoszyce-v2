@@ -248,6 +248,22 @@
         }
       }
     });
+    
+    
+    
+    if (! $.cookie("newsite")) {
+      // Open directly via API
+      $.magnificPopup.open({
+        items: {
+          src: '<div class="white-popup"><p class="class-h3">Dzień dobry,</p><p>Informujemy, że zmienił się adres strony internetowej Miejskiej Biblioteki Publicznej w Bartoszycach.<br><br>Od teraz strona oraz katalogi dostępne są na stronie: <strong> www.mbpbartoszyce.pl</strong></p></div>',
+          type: 'inline'
+        }
+      });
+      
+      $.cookie("newsite", 'ok', {expires: 365, path: '/'});
+    };
+    
+    
   });
   /*
   * Function Test if inline SVGs are supported.
