@@ -8,7 +8,7 @@
 * @since 0.1.0
 */
 ?>
-<aside id="secondary" class="widget-area col-secondary gutters" role="complementary">
+<aside id="secondary" class="widget-area col-secondary" role="complementary">
 	<?php
 	if (has_nav_menu('left_sidebar')) {
 		wp_nav_menu(array(
@@ -18,8 +18,12 @@
 			'items_wrap'     => '<nav id="%1$s" class="v-nav dropdown wp-nav"><ul class="%2$s">%3$s</ul></nav>',
 		));
 	}
-	if ( is_active_sidebar( 'wpg-sidebar-left' ) ) {
-		dynamic_sidebar( 'wpg-sidebar-left' );
-	}
 	?>
+	<div class="gutters">
+		<?php
+		if ( is_active_sidebar( 'wpg-sidebar-left' ) ) {
+			dynamic_sidebar( 'wpg-sidebar-left' );
+		}
+		?>
+	</div>
 </aside>

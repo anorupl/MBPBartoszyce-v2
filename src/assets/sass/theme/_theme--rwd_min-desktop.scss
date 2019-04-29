@@ -55,7 +55,9 @@
 }
 .active-sidebar {
   .col-primary{
-    @include span(8.5 no-gutters);
+    @include span(8 no-gutters);
+    margin-left: span(0.9);
+    margin-right: span(0.1);
     
   }
   .col-secondary{
@@ -66,7 +68,9 @@
 .page-template-page_left_sidebar {
   .col-primary{
     float: right;
-    width: span(9);
+    width: span(8);
+    margin-left: span(0.9);
+    margin-right: span(0.1);
   }
   .col-secondary{
     float: left;
