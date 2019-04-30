@@ -99,7 +99,7 @@ gulp.task('copy-assets', function() {
 	//Customizer assets
 	gulp.src(theme.customizer_assets.src).pipe(changed(theme.customizer_assets.dist))
 	.pipe(gulp.dest(theme.customizer_assets.dist));
-	
+
 	//Copy all custom fonts
 	gulp.src(theme.fonts.src)
 	.pipe(gulp.dest(theme.fonts.dist));
@@ -108,23 +108,24 @@ gulp.task('copy-assets', function() {
 
 //Generate script
 gulp.task('theme-js', function() {
-	
+
 	//Copy Js assets: silder, html5shiv
-	gulp.src([slider, html5shiv, cookies]).pipe(changed(project_dir + dist_assets_js))
+	gulp.src([slider, html5shiv, cookies])
+	.pipe(changed(project_dir + dist_assets_js))
 	.pipe(gulp.dest(project_dir + dist_assets_js));
-	
+
 	//Copy Js for gallery and images
 	gulp.src([imgload, masonry, imagePopup])
 	.pipe(changed(project_dir + dist_assets_js))
 	.pipe(concat('wpg-image.js'))
 	.pipe(uglify()).pipe(rename({suffix: '.min'}))
 	.pipe(gulp.dest(project_dir + dist_assets_js));
-	
+
 	//Copy js file
 	gulp.src(theme.js.src + '**/*.min.js')
 	.pipe(changed(theme.js.dist))
 	.pipe(gulp.dest(theme.js.dist));
-	
+
 	//Copy and minify js
 	gulp.src(['!' + theme.js.src + '**/*.min.js', theme.js.src + '**/*.js'])
 	.pipe(changed(theme.js.dist))
@@ -142,18 +143,18 @@ gulp.task('sass', function() {
 	.pipe(sass({outputStyle: 'expanded' }).on('error', sass.logError))
 	.pipe(prefixer())
 	.pipe(gulp.dest(theme.css.dist));
-	
+
 	var other_sass = gulp.src(['!' + theme.css.src + 'style.scss', theme.css.src + '*.scss'])
 	.pipe(changed(theme.css.dist_css))
 	.pipe(sass().on('error', function(error) {console.log(error);this.emit('end');}))
 	.pipe(gulp.dest(theme.css.dist_css));
-	
+
 	//copy css
 	var css = gulp.src(theme.css.src_css + '*.css').pipe(changed(theme.css.dist_css))
 	.pipe(sass().on('error', function(error) {console.log(error);this.emit('end');}))
 	.pipe(gulp.dest(theme.css.dist_css));
-	
-	
+
+
 	return merge(style, css, other_sass);
 });
 
@@ -176,8 +177,8 @@ gulp.task('css', ['sass'], function() {
 		*/\n'))
 		.pipe(gulp.dest(project_dir));
 	});
-	
-	
+
+
 	//Copy images
 	gulp.task('images', function() {
 		var imagesFile = gulp.src(theme.image.src + '**/' + theme.image.imgType)
@@ -193,14 +194,14 @@ gulp.task('css', ['sass'], function() {
 		.pipe(gulp.dest(theme.image.dis_screen));
 		return merge(imagesFile, svgFile, screenFile);
 	});
-	
-	
+
+
 	//Copy everything under`src/languages`indiscriminately
 	gulp.task('theme-lang', function() {
 		return gulp.src(theme.lang.dist).pipe(gulp.dest(theme.lang.dist));
 	});
-	
-	
+
+
 	//Generate pot-files for WordPress localization
 	gulp.task('language', function() {
 		var langpot = gulp.src(theme.php.src)
@@ -215,13 +216,13 @@ gulp.task('css', ['sass'], function() {
 		.pipe(gulp.dest(theme.lang.dist));
 		return merge(langpot, langpo);
 	});
-	
-	
-	
+
+
+
 	//////////////////////Build////////////////////////////////////////////////
-	
-	
-	
+
+
+
 	//Remove distributon folder
 	gulp.task('clean', function() {
 		return del(dist);
@@ -229,13 +230,13 @@ gulp.task('css', ['sass'], function() {
 	gulp.task('build', ['clean'], function() {
 		sequence('theme-php', 'copy-assets', 'theme-lang', 'theme-js', 'css', 'images', 'language');
 	});
-	
-	
-	
+
+
+
 	//////////////////////Watch////////////////////////////////////////////////
-	
-	
-	
+
+
+
 	gulp.task('watch-all', function() {
 		//1.Copy PHP source files to the `build`folder
 		gulp.watch(theme.php.src, ['theme-php']);
@@ -252,8 +253,8 @@ gulp.task('css', ['sass'], function() {
 		//8.Copy images
 		gulp.watch([theme.image.src + '**/' + theme.image.imgType, theme.image.svg_src + '**/*.svg'], ['image']);
 	});
-	
-	
+
+
 	gulp.task('watch-code', function() {
 		//Copy PHP source files to the `build`folder
 		gulp.watch(theme.php.src, ['theme-php']);
@@ -266,8 +267,8 @@ gulp.task('css', ['sass'], function() {
 		//Build stylesheets
 		gulp.watch(theme.css.src + '/**/*.scss', ['css']);
 	});
-	
-	
+
+
 	gulp.task('watcha', function() {
 		//Copy PHP source files to the `build`folder
 		gulp.watch(theme.php.src, ['theme-php']);
@@ -275,4 +276,3 @@ gulp.task('css', ['sass'], function() {
 		gulp.watch(theme.css.src + '/**/*.scss', ['css']);
 		//gulp.watch(theme.js.src+'**/*.js',['theme-js']);
 	});
-	

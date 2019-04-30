@@ -55,10 +55,10 @@
 }
 .active-sidebar {
   .col-primary{
-    @include span(8 no-gutters);
-    margin-left: span(0.9);
-    margin-right: span(0.1);
-    
+    @include span(8.5 no-gutters);
+    margin-right: span(0.5);
+    margin-left: 0;
+
   }
   .col-secondary{
     @include span(3 no-gutters);
@@ -68,9 +68,9 @@
 .page-template-page_left_sidebar {
   .col-primary{
     float: right;
-    width: span(8);
-    margin-left: span(0.9);
-    margin-right: span(0.1);
+    width: span(8.5);
+    margin-left: span(0.5);
+    margin-right: 0;
   }
   .col-secondary{
     float: left;
@@ -91,7 +91,7 @@
   flex-basis: 275px;
 }
 .fixed-header{
-  padding-top: 94px;
+  padding-top: 95px;
   .header-wrapper {
     position: fixed;
     top: 0;
@@ -328,7 +328,7 @@
     justify-content: space-between;
     border-bottom: 2px solid $four-bw;
   }
-  
+
   .header-section::before {
     content: '';
     display: block;
@@ -344,7 +344,7 @@
 
 
 #contact__map {
-  
+
   &::before {
     content: '';
     display: block;
@@ -357,7 +357,7 @@
     z-index: 500;
     transform: rotate(45deg);
   }
-  
+
 }
 /*--------------------------------------------------------------
 4.9  Partners (slick slider css)
