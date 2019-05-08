@@ -1418,19 +1418,33 @@ textarea {
   outline: 1px solid #543d4f;
 }
 
-input, textarea {
-  width: 100%;
+input[type=text],
+input[type=datetime],
+input[type=number],
+input[type=password],
+input[type=url],
+input[type=email],
+input[type=file],
+textarea {
   border: 1px solid #d5d4d9;
   padding: 13px 13px 13px;
   color: #2d3942;
   background: white;
 }
 
-input:focus, textarea:focus {
+input[type=text]:focus,
+input[type=datetime]:focus,
+input[type=number]:focus,
+input[type=password]:focus,
+input[type=url]:focus,
+input[type=email]:focus,
+input[type=file]:focus,
+textarea:focus {
   border-color: #543d4f;
 }
 
 textarea {
+  width: 90%;
   overflow: auto;
   min-height: 100px;
 }
@@ -1462,6 +1476,20 @@ form input[type=file] {
 form select {
   width: 90%;
   padding: 5px;
+}
+
+.form-dark {
+  padding: 20px 5%;
+  background-color: #533649;
+  border: 1px solid #2d3941;
+  color: #ffffff;
+  -webkit-border-radius: 25px;
+     -moz-border-radius: 25px;
+          border-radius: 25px;
+}
+
+.form-dark a:hover {
+  color: #f25e44;
 }
 
 /* Forms - Search Form
@@ -2441,6 +2469,7 @@ main {
   background-image: url(img/svg/trianglify.svg);
   -webkit-background-size: cover;
      -moz-background-size: cover;
+       -o-background-size: cover;
           background-size: cover;
 }
 
@@ -2560,6 +2589,7 @@ main {
   background: center no-repeat;
   -webkit-background-size: cover;
      -moz-background-size: cover;
+       -o-background-size: cover;
           background-size: cover;
   background-color: #543d4f;
 }
@@ -2613,6 +2643,7 @@ main {
   background-position: center;
   -webkit-background-size: cover;
      -moz-background-size: cover;
+       -o-background-size: cover;
           background-size: cover;
   margin-bottom: 5px;
 }
@@ -2670,6 +2701,7 @@ main {
   background-position: center;
   -webkit-background-size: cover;
      -moz-background-size: cover;
+       -o-background-size: cover;
           background-size: cover;
   border: 5px solid #ffffff;
   margin: 10px;
@@ -4422,6 +4454,7 @@ a.skip-main:active {
     background-position: bottom;
     -webkit-background-size: contain;
        -moz-background-size: contain;
+         -o-background-size: contain;
             background-size: contain;
   }
   .featured-item .col-4 {
@@ -4435,6 +4468,7 @@ a.skip-main:active {
     background-image: url(img/ev-green.jpg);
     -webkit-background-size: 90% 100%;
        -moz-background-size: 90% 100%;
+         -o-background-size: 90% 100%;
             background-size: 90% 100%;
     background-repeat: no-repeat;
     min-height: 360px;
