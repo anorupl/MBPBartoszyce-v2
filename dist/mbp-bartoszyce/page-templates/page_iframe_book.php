@@ -5,7 +5,6 @@
 * @package MBP Bartoszyce
 * @since 0.1.0
 */
-
 get_header(); ?>
 <div id="content" class="site-content clear-both">
   <?php
@@ -19,7 +18,7 @@ get_header(); ?>
     <div id="primary" class="content-area col-primary--12 fidkar-yellow">
       <main id="main" class="site-main">
         <div class="container">
-          <iframe id="site-main__iframe" name="iframe" src="https://www.wbp.olsztyn.pl/fidkar/bartoszyce.html" width="100%" height="800px" scrolling="auto" align="top" frameborder="0"><?php _e('This page is visible only in browsers that support frames.','wpg_theme'); ?></iframe>
+          <iframe id="site-main__iframe" name="iframe" src="http://www.wbp.olsztyn.pl/fidkar/bartoszyce.html" width="100%" height="800px" scrolling="auto" align="top" frameborder="0"><?php _e('This page is visible only in browsers that support frames.','wpg_theme'); ?></iframe>
         </div>
       </main>
     </div><!-- #primary -->

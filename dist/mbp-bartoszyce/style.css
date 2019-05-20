@@ -1453,7 +1453,6 @@ form {
   margin: 20px 0;
 }
 
-form input,
 form textarea,
 form input[type=text],
 form input[type=datetime],
@@ -1476,6 +1475,12 @@ form input[type=file] {
 form select {
   width: 90%;
   padding: 5px;
+}
+
+form input[type=url],
+form input[type=email],
+form input[type=file] {
+  width: 90%;
 }
 
 .form-dark {
@@ -2469,7 +2474,6 @@ main {
   background-image: url(img/svg/trianglify.svg);
   -webkit-background-size: cover;
      -moz-background-size: cover;
-       -o-background-size: cover;
           background-size: cover;
 }
 
@@ -2589,7 +2593,6 @@ main {
   background: center no-repeat;
   -webkit-background-size: cover;
      -moz-background-size: cover;
-       -o-background-size: cover;
           background-size: cover;
   background-color: #543d4f;
 }
@@ -2643,7 +2646,6 @@ main {
   background-position: center;
   -webkit-background-size: cover;
      -moz-background-size: cover;
-       -o-background-size: cover;
           background-size: cover;
   margin-bottom: 5px;
 }
@@ -2701,7 +2703,6 @@ main {
   background-position: center;
   -webkit-background-size: cover;
      -moz-background-size: cover;
-       -o-background-size: cover;
           background-size: cover;
   border: 5px solid #ffffff;
   margin: 10px;
@@ -4454,7 +4455,6 @@ a.skip-main:active {
     background-position: bottom;
     -webkit-background-size: contain;
        -moz-background-size: contain;
-         -o-background-size: contain;
             background-size: contain;
   }
   .featured-item .col-4 {
@@ -4468,7 +4468,6 @@ a.skip-main:active {
     background-image: url(img/ev-green.jpg);
     -webkit-background-size: 90% 100%;
        -moz-background-size: 90% 100%;
-         -o-background-size: 90% 100%;
             background-size: 90% 100%;
     background-repeat: no-repeat;
     min-height: 360px;

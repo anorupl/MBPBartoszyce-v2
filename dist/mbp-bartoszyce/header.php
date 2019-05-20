@@ -51,7 +51,6 @@
       <div id="site-header">
         <div class="title-area">
           <h1 class="site-title">
-            <span class="screen-reader-text"><?php bloginfo('name');?></span>
             <?php if (!has_custom_logo()): ?>
               <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name');?></a>
             <?php else: ?>

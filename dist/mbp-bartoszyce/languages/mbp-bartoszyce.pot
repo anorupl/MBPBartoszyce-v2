@@ -234,11 +234,11 @@ msgstr ""
 msgid "Left Sidebar"
 msgstr ""
 
-#: src/header.php:127, src/header.php:155
+#: src/header.php:125, src/header.php:153
 msgid "Menu"
 msgstr ""
 
-#: src/header.php:161
+#: src/header.php:159
 msgid "Add menu"
 msgstr ""
 
@@ -546,7 +546,7 @@ msgstr ""
 msgid " - page: "
 msgstr ""
 
-#: src/page-templates/page_iframe_audiobook.php:43, src/page-templates/page_iframe_book.php:43, src/page-templates/page_iframe_regio.php:43
+#: src/page-templates/page_iframe_audiobook.php:43, src/page-templates/page_iframe_book.php:41, src/page-templates/page_iframe_regio.php:43
 msgid "This page is visible only in browsers that support frames."
 msgstr ""
 
